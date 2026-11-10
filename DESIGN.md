@@ -248,7 +248,7 @@ Les affiches gardent leur format d'origine (rapport 31:42) et ne sont jamais rec
 - **Boutons radio :** cercle au contour blanc à 20 %, rempli en bleu de contrôle avec un point noir de salle quand il est coché.
 
 ### Navigation
-- **En-tête :** collant, noir de salle, logo bleu à gauche, cinq liens à droite en Inter 500 clair, bleu clair au survol.
+- **En-tête :** collant, noir de salle, logo bleu à gauche, six liens à droite en Inter 500 clair, bleu clair au survol.
 - **Infobulles :** au survol ou au focus d'un lien, une bulle blanche (coins de 12px, ombre d'infobulle) décrit la destination en une phrase. Un lien sans destination encore définie n'a pas d'infobulle.
 - **Mobile (sous 1024px) :** un bouton à trois traits ouvre un panneau `<details>` pleine largeur ; chaque lien y est suivi de sa description.
 - **Lien d'évitement :** « Aller à la programmation », visible au focus clavier.
