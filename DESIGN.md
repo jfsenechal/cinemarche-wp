@@ -104,15 +104,18 @@ Ce document décrit le design **retenu par le porteur du projet : la version 2**
 
 ## Overview
 
-**Creative North Star: "La salle et la pellicule"**
+**Creative North Star: "Le programme, puis la salle"**
 
-On entre par le noir de la salle. L'en-tête et la bannière sont plongés dans un bleu nuit presque noir, celui de la salle juste avant que le film commence, avec un halo bleu comme la lumière du projecteur. Le logo bleu, un titre en capitales étroites, puis une bande de pellicule 35 mm perforée qui montre quatre vraies photos du lieu : la présentation en salle, le public de CinéSenior, l'accueil du CinéXtra, un atelier CinéAnimés.
+La page s'ouvre comme le programme qu'on garde dans la poche : sous un en-tête bleu nuit très mince, la grille de la semaine arrive tout de suite, sur fond blanc, encre foncée. Quoi, quand, où : l'horaire se trouve sans faire défiler. Le rouge du logo porte tout ce qui touche à la programmation, des titres de film en tête de colonne aux horaires et aux types de séance.
 
-Dès qu'on passe à l'information, la lumière se rallume. La grille de la semaine, les films à venir et le pied de page sont sur fond blanc, encre foncée, et le rouge du logo prend le relais pour tout ce qui touche à la programmation : titres des films dans la grille, horaires, types de séance. Le noir de salle ne revient qu'une fois, pour le bloc de la lettre d'info.
+Ensuite seulement, la lumière baisse. La bannière plonge dans le noir de salle, un bleu nuit presque noir avec un halo comme la lumière du projecteur : le logo bleu, un titre en capitales étroites, puis une bande de pellicule 35 mm perforée qui montre quatre vraies photos du lieu, la présentation en salle, le public de CinéSenior, l'accueil du CinéXtra, un atelier CinéAnimés. C'est le moment où l'on dit qui programme, et où l'on donne envie de venir.
 
-Le partage est donc simple : **le sombre accueille, le clair renseigne**. Le bleu donne l'ambiance et porte les actions, le rouge porte le programme. La densité est celle d'un programme qu'on lit d'un coup d'œil, avec de grandes respirations entre les sections.
+Puis le clair revient pour les films à venir et le pied de page, et le noir de salle une dernière fois pour la lettre d'info.
+
+Le partage est donc simple : **le clair renseigne d'abord, le sombre donne envie ensuite**. Le bleu donne l'ambiance et porte les actions, le rouge porte le programme. La densité est celle d'un programme qu'on lit d'un coup d'œil, avec de grandes respirations entre les sections.
 
 **Key Characteristics:**
+- La grille de la semaine est le premier écran ; la bannière vient après.
 - Trois zones sombres seulement (en-tête, bannière, lettre d'info) ; toute l'information se lit sur blanc.
 - Deux couleurs de marque au rôle distinct : bleu pour l'ambiance et l'action, rouge pour la programmation.
 - Deux familles : Oswald, étroite et affirmée, pour les titres et les horaires ; Inter pour la lecture.
@@ -151,7 +154,7 @@ Un bleu nuit profond, le bleu et le rouge du logo, et des gris neutres légèrem
 
 ### Named Rules
 
-**La règle du sombre qui accueille.** Le noir de salle est réservé à trois zones : l'en-tête, la bannière et la lettre d'info. Aucune information de programmation ne se lit sur fond sombre. Test : si un horaire apparaît sur du bleu nuit, c'est un défaut.
+**La règle du sombre qui invite.** Le noir de salle est réservé à trois zones : l'en-tête, la bannière et la lettre d'info. Aucune information de programmation ne se lit sur fond sombre. Test : si un horaire apparaît sur du bleu nuit, c'est un défaut.
 
 **La règle des deux couleurs.** Le bleu dit « Cinémarche » et « cliquez ici » ; le rouge dit « programmation ». Un bouton n'est jamais rouge, un horaire n'est jamais bleu.
 
@@ -172,7 +175,7 @@ Les deux polices sont **auto-hébergées** dans `assets/fonts/` en sous-ensemble
 L'échelle de Tailwind est **relevée d'un cran** dans `@theme` : `text-sm` vaut 16px, `text-base` 18px, `text-lg` 20px, `text-xl` 22px.
 
 ### Hierarchy
-- **Display** (Oswald 600, 36px en mobile, 48px puis 60px en grand écran, interligne serré) : le titre de la bannière. Un seul par page, 24 caractères par ligne au plus.
+- **Display** (Oswald 600, 36px en mobile, 48px puis 60px en grand écran, interligne serré) : le titre de la bannière. Un seul par page, 24 caractères par ligne au plus. C'est un titre de niveau 2 : le titre de niveau 1 de la page d'accueil est invisible à l'écran et placé en tête du contenu, pour que l'ordre des titres reste juste alors que la grille passe en premier.
 - **Headline** (Oswald 600, 30px puis 36px) : titres de section.
 - **Title** (Oswald 500, 24px pour un titre de film dans une carte, 22px pour un jour dans la liste mobile).
 - **Body** (Inter 400, 18px, interligne 28px ; chapô à 20px en mobile) : résumés, chapôs, notes, coordonnées. Longueur de ligne plafonnée à 56 caractères.
@@ -190,7 +193,7 @@ L'échelle de Tailwind est **relevée d'un cran** dans `@theme` : `text-sm` vaut
 
 Une colonne centrée de 1280px au plus (80rem), avec une gouttière de 16px en mobile, 24px à partir de 640px et 32px à partir de 1024px. Les sections sont séparées par 64px de marge verticale en mobile et 96px au-delà, et par un filet fin quand deux sections claires se suivent.
 
-Ordre de la page d'accueil : en-tête collant, bannière avec la bande de pellicule, grille de la semaine, « Prochainement », lettre d'info, pied de page.
+Ordre de la page d'accueil : en-tête collant, grille de la semaine, bannière avec la bande de pellicule, « Nos rendez-vous », lettre d'info, pied de page. La grille passe en premier : l'horaire se trouve sans faire défiler.
 
 Points de rupture observés :
 - **640px** : la pellicule passe de 2 × 2 photos carrées à 4 photos en 4:3 sur une ligne ; les cartes de film passent à 2 colonnes ; le pied de page à 2 colonnes.
@@ -226,10 +229,10 @@ Les affiches gardent leur format d'origine (rapport 31:42) et ne sont jamais rec
 
 ### Buttons
 - **Shape :** coins doux (8px), hauteur de 48px en mobile.
-- **Primary :** bleu de bouton, texte blanc en Inter 500 à 18px, contour d'un pixel de la même couleur. Un seul par zone (« Voir la grille de la semaine »).
+- **Primary :** bleu de bouton, texte blanc en Inter 500 à 18px, contour d'un pixel de la même couleur. Un seul par zone. La page d'accueil n'en affiche plus depuis que la grille est en tête ; le style sert au lien d'évitement et aux pages à venir.
 - **Hover / Focus :** fonce en bleu de survol ; focus par un contour de 2px en bleu ciel, décalé de 2px.
 - **Sur fond sombre (formulaire) :** bouton blanc à texte noir de salle (« Valider »), survol en bleu très pâle.
-- **Lien secondaire :** texte seul en bleu clair suivi d'une flèche, blanc au survol.
+- **Lien secondaire :** texte seul en bleu clair suivi d'une flèche, blanc au survol. C'est la seule action de la bannière (« Nos rendez-vous → »).
 
 ### Chips
 - **Style :** pastille complète, fond rouge de pastille, texte rouge de libellé en Inter 500 à 16px.
@@ -245,8 +248,8 @@ Les affiches gardent leur format d'origine (rapport 31:42) et ne sont jamais rec
 - **Boutons radio :** cercle au contour blanc à 20 %, rempli en bleu de contrôle avec un point noir de salle quand il est coché.
 
 ### Navigation
-- **En-tête :** collant, noir de salle, logo bleu à gauche, trois liens à droite en Inter 500 clair, bleu clair au survol.
-- **Infobulles :** au survol ou au focus d'un lien, une bulle blanche (coins de 12px, ombre d'infobulle) décrit la destination en une phrase.
+- **En-tête :** collant, noir de salle, logo bleu à gauche, cinq liens à droite en Inter 500 clair, bleu clair au survol.
+- **Infobulles :** au survol ou au focus d'un lien, une bulle blanche (coins de 12px, ombre d'infobulle) décrit la destination en une phrase. Un lien sans destination encore définie n'a pas d'infobulle.
 - **Mobile (sous 1024px) :** un bouton à trois traits ouvre un panneau `<details>` pleine largeur ; chaque lien y est suivi de sa description.
 - **Lien d'évitement :** « Aller à la programmation », visible au focus clavier.
 
@@ -267,6 +270,7 @@ Les affiches gardent leur format d'origine (rapport 31:42) et ne sont jamais rec
 
 ### Do:
 - **Do** garder la grille de la semaine en `<table>` sémantique avec sa version liste sous 768px. Jamais une image.
+- **Do** garder la grille de la semaine en tête de la page d'accueil, avant la bannière.
 - **Do** réserver le noir de salle à l'en-tête, à la bannière et à la lettre d'info, et mettre toute l'information sur blanc.
 - **Do** utiliser le bleu pour l'ambiance et les actions, le rouge pour la programmation.
 - **Do** tenir le texte courant à 18px et à 7:1 de contraste au moins ; vérifier chaque nouvelle paire de couleurs par le calcul.
@@ -286,6 +290,6 @@ Les affiches gardent leur format d'origine (rapport 31:42) et ne sont jamais rec
 - **Don't** ajouter d'ombre aux cartes ou aux boutons, ni de rayon au-delà de 16px.
 - **Don't** ajouter de dégradé décoratif, de dégradé sur du texte ou un second halo dans une même zone.
 - **Don't** mettre de sur-titre en petites capitales espacées.
-- **Don't** remplacer la grille par un carrousel, ni les cartes « Prochainement » par un rang à faire défiler.
+- **Don't** remplacer la grille par un carrousel, ni les cartes « Nos rendez-vous » par un rang à faire défiler.
 - **Don't** écrire « RÉSERVER » en gros, ni de superlatif promotionnel.
 - **Don't** recadrer une affiche en carré ou la remplacer par un aplat de couleur.

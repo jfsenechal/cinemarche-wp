@@ -31,7 +31,8 @@ Fichiers à la racine : `index.html`, tokens dans `src/css/app.css`, CSS compil�
   - `nuit` : noir de salle bleuté (`nuit-950` `#0a1720`). En-tête collant, bannière, bloc lettre d'info.
   - Neutres `zinc` de Tailwind sur fond blanc pour les zones de lecture.
 - **Typographie :** Oswald (`font-display`, 500–600) pour les titres, sur-titres et horaires ; Inter variable (`font-sans`) pour le texte courant. Les deux sont auto-hébergées.
-- **Structure de la page d'accueil :** en-tête sombre collant avec infobulles (menu `<details>` en mobile) → bannière sombre avec logo, titre et montage « pellicule » de quatre photos du lieu (utilitaire `film-perfs`) → grille de la semaine → « Prochainement » en cartes affiche → lettre d'info sur fond sombre → pied de page clair (partenaires, contact).
+- **Structure de la page d'accueil :** en-tête sombre collant avec infobulles (menu `<details>` en mobile) → **grille de la semaine en premier** (décision du porteur du projet) → bannière sombre avec logo, titre (niveau 2 ; le `<h1>` de la page est en `sr-only` en tête de `<main>`), lien « Nos rendez-vous » et montage « pellicule » de quatre photos du lieu (utilitaire `film-perfs`) → « Nos rendez-vous » en cartes affiche → lettre d'info sur fond sombre → pied de page clair (partenaires, contact).
+- **Menu** (décision du porteur du projet) : À l'affiche, Nos rendez-vous, Nos Xtras, Archive, Contact. « Nos rendez-vous » mène à la section des films à venir (ancienne « Prochainement », `id="rendez-vous"`). « Nos Xtras » et « Archive » pointent sur `#` en attendant leur contenu, sans infobulle ni description ; à compléter quand les pages existeront.
 - **Grille de la semaine :** `<table>` sémantique à partir de `md` (films en colonnes avec affiche et titre sur fond rouge, jours en lignes, colonnes alternées `rouge-50`, première colonne collante, `tabular-nums`) ; sous `md`, liste par jour avec horaires en rouge et étiquettes en pastille.
 - **Formes :** rayons `rounded-lg` (boutons, champs) et `rounded-2xl` (cartes, blocs), contours en `ring-1`, halo bleu flouté dans les zones sombres.
 
@@ -43,7 +44,7 @@ Fichiers à la racine : `index.html`, tokens dans `src/css/app.css`, CSS compil�
 - **Échelle de texte relevée** dans `@theme` : `text-sm` = 16px, `text-base` = 18px, `text-lg` = 20px, `text-xl` = 22px. Une phrase à lire est en `text-base` au moins ; `text-sm` est réservé aux libellés.
 - **Contrastes :** le texte secondaire sur clair est en `zinc-600` (plus de `zinc-500`), sur sombre en `zinc-300` ; le bouton principal est en `brand-600` (le blanc sur `brand-500` ne passait pas).
 
-- **Textes alternatifs des affiches :** descriptifs dans les cartes « Prochainement ». Dans l'en-tête de la grille, la miniature garde volontairement `alt=""` : le titre du film est écrit juste en dessous, et un lecteur d'écran répète l'en-tête de colonne à chaque case.
+- **Textes alternatifs des affiches :** descriptifs dans les cartes « Nos rendez-vous ». Dans l'en-tête de la grille, la miniature garde volontairement `alt=""` : le titre du film est écrit juste en dessous, et un lecteur d'écran répète l'en-tête de colonne à chaque case.
 - **Bouton du menu mobile :** 48px de côté, avec un contour de focus.
 
 ## État du projet

@@ -396,9 +396,10 @@
     }
   ],
   "narrative": {
-    "northStar": "La salle et la pellicule",
-    "overview": "**Creative North Star: \"La salle et la pellicule\"**\n\nOn entre par le noir de la salle. L'en-tête et la bannière sont plongés dans un bleu nuit presque noir, celui de la salle juste avant que le film commence, avec un halo bleu comme la lumière du projecteur. Le logo bleu, un titre en capitales étroites, puis une bande de pellicule 35 mm perforée qui montre quatre vraies photos du lieu : la présentation en salle, le public de CinéSenior, l'accueil du CinéXtra, un atelier CinéAnimés.\n\nDès qu'on passe à l'information, la lumière se rallume. La grille de la semaine, les films à venir et le pied de page sont sur fond blanc, encre foncée, et le rouge du logo prend le relais pour tout ce qui touche à la programmation : titres des films dans la grille, horaires, types de séance. Le noir de salle ne revient qu'une fois, pour le bloc de la lettre d'info.\n\nLe partage est donc simple : **le sombre accueille, le clair renseigne**. Le bleu donne l'ambiance et porte les actions, le rouge porte le programme. La densité est celle d'un programme qu'on lit d'un coup d'œil, avec de grandes respirations entre les sections.",
+    "northStar": "Le programme, puis la salle",
+    "overview": "**Creative North Star: \"Le programme, puis la salle\"**\n\nLa page s'ouvre comme le programme qu'on garde dans la poche : sous un en-tête bleu nuit très mince, la grille de la semaine arrive tout de suite, sur fond blanc, encre foncée. Quoi, quand, où : l'horaire se trouve sans faire défiler. Le rouge du logo porte tout ce qui touche à la programmation, des titres de film en tête de colonne aux horaires et aux types de séance.\n\nEnsuite seulement, la lumière baisse. La bannière plonge dans le noir de salle, un bleu nuit presque noir avec un halo comme la lumière du projecteur : le logo bleu, un titre en capitales étroites, puis une bande de pellicule 35 mm perforée qui montre quatre vraies photos du lieu, la présentation en salle, le public de CinéSenior, l'accueil du CinéXtra, un atelier CinéAnimés. C'est le moment où l'on dit qui programme, et où l'on donne envie de venir.\n\nPuis le clair revient pour les films à venir et le pied de page, et le noir de salle une dernière fois pour la lettre d'info.\n\nLe partage est donc simple : **le clair renseigne d'abord, le sombre donne envie ensuite**. Le bleu donne l'ambiance et porte les actions, le rouge porte le programme. La densité est celle d'un programme qu'on lit d'un coup d'œil, avec de grandes respirations entre les sections.",
     "keyCharacteristics": [
+      "La grille de la semaine est le premier écran ; la bannière vient après.",
       "Trois zones sombres seulement (en-tête, bannière, lettre d'info) ; toute l'information se lit sur blanc.",
       "Deux couleurs de marque au rôle distinct : bleu pour l'ambiance et l'action, rouge pour la programmation.",
       "Deux familles : Oswald, étroite et affirmée, pour les titres et les horaires ; Inter pour la lecture.",
@@ -409,7 +410,7 @@
     ],
     "rules": [
       {
-        "name": "La règle du sombre qui accueille",
+        "name": "La règle du sombre qui invite",
         "body": "Le noir de salle est réservé à trois zones : l'en-tête, la bannière et la lettre d'info. Aucune information de programmation ne se lit sur fond sombre. Test : si un horaire apparaît sur du bleu nuit, c'est un défaut.",
         "section": "colors"
       },
@@ -456,6 +457,7 @@
     ],
     "dos": [
       "Do garder la grille de la semaine en `<table>` sémantique avec sa version liste sous 768px. Jamais une image.",
+      "Do garder la grille de la semaine en tête de la page d'accueil, avant la bannière.",
       "Do réserver le noir de salle à l'en-tête, à la bannière et à la lettre d'info, et mettre toute l'information sur blanc.",
       "Do utiliser le bleu pour l'ambiance et les actions, le rouge pour la programmation.",
       "Do tenir le texte courant à 18px et à 7:1 de contraste au moins ; vérifier chaque nouvelle paire de couleurs par le calcul.",
@@ -475,7 +477,7 @@
       "Don't ajouter d'ombre aux cartes ou aux boutons, ni de rayon au-delà de 16px.",
       "Don't ajouter de dégradé décoratif, de dégradé sur du texte ou un second halo dans une même zone.",
       "Don't mettre de sur-titre en petites capitales espacées.",
-      "Don't remplacer la grille par un carrousel, ni les cartes « Prochainement » par un rang à faire défiler.",
+      "Don't remplacer la grille par un carrousel, ni les cartes « Nos rendez-vous » par un rang à faire défiler.",
       "Don't écrire « RÉSERVER » en gros, ni de superlatif promotionnel.",
       "Don't recadrer une affiche en carré ou la remplacer par un aplat de couleur."
     ]
