@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="fr" class="antialiased">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cinémarche asbl — La salle de ciné culturelle à Marche, au CinéXtra</title>
+    <meta
+      name="description"
+      content="Films art et essai, ciné-clubs et événements à Marche-en-Famenne. Programmation de la semaine au CinéXtra et au Tiroir des Saveurs."
+    />
+    <link rel="icon" href="assets/img/logo-cinemarche.png" />
+
+    <link rel="preload" href="assets/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/oswald-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+    <link rel="stylesheet" href="assets/css/app.css" />
+  </head>
+
+  <body class="isolate bg-white font-sans text-zinc-800">
+    <a
+      href="#semaine"
+      class="sr-only rounded-lg bg-brand-600 px-4 py-2 text-base font-medium text-white focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50"
+      >Aller à la programmation</a
+    >
+
+    <!-- ═══════════════════ En-tête ═══════════════════ -->
+    <header class="sticky top-0 z-40 border-b border-white/10 bg-nuit-950/95 backdrop-blur">
+      <nav class="mx-auto flex max-w-7xl items-center gap-x-6 px-4 py-3 sm:px-6 lg:px-8">
+        <a href="/" aria-label="Accueil Cinémarche" class="shrink-0">
+          <img src="assets/img/logo-cinemarche-blue.png" alt="Cinémarche asbl" class="h-7 w-auto" />
+        </a>
+
+        <div class="flex flex-1 items-center justify-end gap-x-8 max-lg:hidden">
+          <div class="group relative">
+            <a
+              href="#semaine"
+              aria-describedby="tip-affiche"
+              class="text-base font-medium text-zinc-100 hover:text-brand-200"
+              >À l'affiche</a
+            >
+            <div
+              id="tip-affiche"
+              role="tooltip"
+              class="invisible absolute top-full left-1/2 z-50 mt-3 w-72 -translate-x-1/2 rounded-xl bg-white p-3 text-base/7 text-zinc-700 opacity-0 shadow-lg ring-1 ring-black/10 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"
+            >
+              Détails des films programmés au CinéXtra et ailleurs dans la semaine.
+            </div>
+          </div>
+
+          <div class="group relative">
+            <a
+              href="#prochainement"
+              aria-describedby="tip-prochainement"
+              class="text-base font-medium text-zinc-100 hover:text-brand-200"
+              >Prochainement</a
+            >
+            <div
+              id="tip-prochainement"
+              role="tooltip"
+              class="invisible absolute top-full left-1/2 z-50 mt-3 w-72 -translate-x-1/2 rounded-xl bg-white p-3 text-base/7 text-zinc-700 opacity-0 shadow-lg ring-1 ring-black/10 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"
+            >
+              Détails pour tous les films programmés par l'asbl Cinémarche à venir.
+            </div>
+          </div>
+
+          <div class="group relative">
+            <a
+              href="#contact"
+              aria-describedby="tip-contact"
+              class="text-base font-medium text-zinc-100 hover:text-brand-200"
+              >Contact</a
+            >
+            <div
+              id="tip-contact"
+              role="tooltip"
+              class="invisible absolute top-full left-1/2 z-50 mt-3 w-72 -translate-x-1/2 rounded-xl bg-white p-3 text-base/7 text-zinc-700 opacity-0 shadow-lg ring-1 ring-black/10 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"
+            >
+              info@cinemarche.be — 084/32.73.72
+            </div>
+          </div>
+        </div>
+
+        <!-- Menu mobile -->
+        <details class="group/menu ml-auto lg:hidden">
+          <summary
+            class="-my-1 flex size-12 cursor-pointer items-center justify-center rounded-lg text-zinc-100 list-none hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-300 [&::-webkit-details-marker]:hidden"
+            aria-label="Ouvrir le menu"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="size-6 shrink-0 stroke-current group-open/menu:hidden">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="size-6 shrink-0 stroke-current group-not-open/menu:hidden">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </summary>
+          <div
+            class="absolute inset-x-0 top-full border-b border-white/10 bg-nuit-950 px-4 pt-2 pb-6 sm:px-6"
+          >
+            <ul role="list" class="grid gap-y-1">
+              <li>
+                <a href="#semaine" class="block rounded-lg px-3 py-3 text-base font-medium text-zinc-100 hover:bg-white/10">À l'affiche</a>
+                <p class="px-3 text-base text-zinc-300">Les films de la semaine au CinéXtra et ailleurs.</p>
+              </li>
+              <li>
+                <a href="#prochainement" class="block rounded-lg px-3 py-3 text-base font-medium text-zinc-100 hover:bg-white/10">Prochainement</a>
+                <p class="px-3 text-base text-zinc-300">Tous les films programmés par Cinémarche à venir.</p>
+              </li>
+              <li>
+                <a href="#contact" class="block rounded-lg px-3 py-3 text-base font-medium text-zinc-100 hover:bg-white/10">Contact</a>
+                <p class="px-3 text-base text-zinc-300">info@cinemarche.be</p>
+              </li>
+            </ul>
+          </div>
+        </details>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ═══════════════════ Bannière ═══════════════════ -->
+      <section class="relative overflow-hidden bg-nuit-950 pt-14 pb-16 sm:pt-20 sm:pb-24">
+            <div
+              class="pointer-events-none absolute -top-40 left-1/2 size-[48rem] -translate-x-1/2 rounded-full bg-brand-500/20 blur-3xl"
+              aria-hidden="true"
+            ></div>
+
+            <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <img
+                src="assets/img/logo-cinemarche-blue.png"
+                alt="Cinémarche asbl"
+                class="h-12 w-auto sm:h-16"
+              />
+              <p class="mt-8 max-w-[56ch] font-display text-lg font-medium text-brand-300 sm:text-base">
+                Cinéma d'art et d'essai à Marche-en-Famenne
+              </p>
+              <h1 class="mt-3 max-w-[24ch] font-display text-4xl font-semibold text-white text-balance sm:text-5xl lg:text-6xl">
+                La salle de ciné culturelle à Marche, au CinéXtra
+              </h1>
+              <p class="mt-6 max-w-[48ch] text-lg text-pretty text-zinc-300 sm:text-xl">
+                Films art et essai, ciné-clubs et événements.
+              </p>
+
+              <div class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
+                <a
+                  href="#semaine"
+                  class="rounded-lg bg-brand-600 px-3 py-2.5 text-base font-medium text-white ring-1 ring-brand-600 hover:bg-brand-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-300 sm:py-2"
+                  >Voir la grille de la semaine</a
+                >
+                <a
+                  href="#prochainement"
+                  class="text-base font-medium text-brand-200 hover:text-white"
+                  >Prochainement <span aria-hidden="true">→</span></a
+                >
+              </div>
+            </div>
+
+            <!-- Montage « pellicule » -->
+            <div class="relative mt-12 sm:mt-16">
+              <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="grid gap-y-2 rounded-2xl bg-nuit-800 p-2 ring-1 ring-white/10 sm:gap-y-3 sm:p-3">
+                  <div class="film-perfs h-2.5 [--perf-color:var(--color-zinc-300)] sm:h-3"></div>
+                  <ul role="list" class="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
+                    <li class="relative">
+                      <img
+                        src="assets/img/salle-presentation.jpg"
+                        alt="Présentation d'un film sur la scène de la salle du CinéXtra."
+                        class="aspect-square w-full rounded-[min(1vw,10px)] object-cover outline-1 -outline-offset-1 outline-white/10 sm:aspect-4/3"
+                      />
+                      <p class="absolute inset-x-0 bottom-0 rounded-b-[min(1vw,10px)] bg-linear-to-t from-nuit-950/90 to-transparent px-3 pt-8 pb-2.5 text-base/6 font-medium text-white sm:text-sm/5">
+                        Présentation en salle
+                      </p>
+                    </li>
+                    <li class="relative">
+                      <img
+                        src="assets/img/cineseniors.jpg"
+                        alt="Le public d'une séance CinéSenior installé dans les fauteuils de la salle."
+                        class="aspect-square w-full rounded-[min(1vw,10px)] object-cover outline-1 -outline-offset-1 outline-white/10 sm:aspect-4/3"
+                      />
+                      <p class="absolute inset-x-0 bottom-0 rounded-b-[min(1vw,10px)] bg-linear-to-t from-nuit-950/90 to-transparent px-3 pt-8 pb-2.5 text-base/6 font-medium text-white sm:text-sm/5">
+                        CinéSenior
+                      </p>
+                    </li>
+                    <li class="relative">
+                      <img
+                        src="assets/img/accueil-cinextra.jpg"
+                        alt="L'accueil vitré du complexe CinéXtra un jour de séance."
+                        class="aspect-square w-full rounded-[min(1vw,10px)] object-cover outline-1 -outline-offset-1 outline-white/10 sm:aspect-4/3"
+                      />
+                      <p class="absolute inset-x-0 bottom-0 rounded-b-[min(1vw,10px)] bg-linear-to-t from-nuit-950/90 to-transparent px-3 pt-8 pb-2.5 text-base/6 font-medium text-white sm:text-sm/5">
+                        Le CinéXtra
+                      </p>
+                    </li>
+                    <li class="relative">
+                      <img
+                        src="assets/img/cineanimes.jpg"
+                        alt="Des enfants animent une image en volume pendant un atelier CinéAnimés."
+                        class="aspect-square w-full rounded-[min(1vw,10px)] object-cover outline-1 -outline-offset-1 outline-white/10 sm:aspect-4/3"
+                      />
+                      <p class="absolute inset-x-0 bottom-0 rounded-b-[min(1vw,10px)] bg-linear-to-t from-nuit-950/90 to-transparent px-3 pt-8 pb-2.5 text-base/6 font-medium text-white sm:text-sm/5">
+                        Atelier CinéAnimés
+                      </p>
+                    </li>
+                  </ul>
+                  <div class="film-perfs h-2.5 [--perf-color:var(--color-zinc-300)] sm:h-3"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+      <!-- ═══════════════════ Grille de la semaine ═══════════════════ -->
+      <section id="semaine" class="scroll-mt-20 py-16 sm:py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p class="font-display text-lg font-medium text-rouge-600 sm:text-base">À l'affiche</p>
+          <h2 class="mt-2 max-w-[35ch] font-display text-3xl font-semibold text-zinc-900 text-balance sm:text-4xl">
+            La semaine du mercredi 5 au mardi 11 août
+          </h2>
+          <p class="mt-4 max-w-[56ch] text-lg text-pretty text-zinc-600 sm:text-base">
+            Toutes les séances programmées par Cinémarche, au CinéXtra et au Tiroir des Saveurs.
+          </p>
+        </div>
+
+        <div class="mx-auto mt-10 max-w-7xl px-4 max-md:hidden sm:px-6 lg:px-8">
+              <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <div class="inline-block min-w-full px-4 py-2 align-middle sm:px-6 lg:px-8">
+                  <table class="w-full min-w-3xl border-separate border-spacing-0">
+                    <caption class="sr-only">
+                      Grille des séances du mercredi 5 au mardi 11 août 2026
+                    </caption>
+                    <thead>
+                      <tr>
+                        <th scope="col" class="sticky left-0 z-10 w-32 bg-white pb-3 text-left align-bottom text-sm font-medium whitespace-nowrap text-zinc-600">
+                          Jour
+                        </th>
+                        <th scope="col" class="w-40 px-1.5 pb-3 align-bottom sm:px-2">
+                          <img src="assets/img/affiches/soulevements.jpg" alt="" class="mx-auto h-24 w-auto rounded-md outline-1 -outline-offset-1 outline-black/10 sm:h-28" />
+                          <div class="mt-2 rounded-md bg-rouge-600 px-2 py-1.5 font-display text-sm font-medium text-white">Soulèvements</div>
+                        </th>
+                        <th scope="col" class="w-40 px-1.5 pb-3 align-bottom sm:px-2">
+                          <img src="assets/img/affiches/orwell-2-2-5.jpg" alt="" class="mx-auto h-24 w-auto rounded-md outline-1 -outline-offset-1 outline-black/10 sm:h-28" />
+                          <div class="mt-2 rounded-md bg-rouge-600 px-2 py-1.5 font-display text-sm font-medium text-white">Orwell : 2 + 2 = 5</div>
+                        </th>
+                        <th scope="col" class="w-40 px-1.5 pb-3 align-bottom sm:px-2">
+                          <img src="assets/img/affiches/sainte-marie-aux-mines.jpg" alt="" class="mx-auto h-24 w-auto rounded-md outline-1 -outline-offset-1 outline-black/10 sm:h-28" />
+                          <div class="mt-2 rounded-md bg-rouge-600 px-2 py-1.5 font-display text-sm font-medium text-white">Sainte-Marie-aux-Mines</div>
+                        </th>
+                        <th scope="col" class="w-40 px-1.5 pb-3 align-bottom sm:px-2">
+                          <img src="assets/img/affiches/les-parfaits.jpg" alt="" class="mx-auto h-24 w-auto rounded-md outline-1 -outline-offset-1 outline-black/10 sm:h-28" />
+                          <div class="mt-2 rounded-md bg-rouge-600 px-2 py-1.5 font-display text-sm font-medium text-white">Les Parfait(s)</div>
+                        </th>
+                        <th scope="col" class="w-40 px-1.5 pb-3 align-bottom sm:px-2">
+                          <img src="assets/img/affiches/pour-le-plaisir.jpg" alt="" class="mx-auto h-24 w-auto rounded-md outline-1 -outline-offset-1 outline-black/10 sm:h-28" />
+                          <div class="mt-2 rounded-md bg-rouge-600 px-2 py-1.5 font-display text-sm font-medium text-white">Pour le plaisir</div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-t border-zinc-950/10 bg-white py-4 pr-4 text-left align-middle text-base font-medium whitespace-nowrap text-zinc-900">
+                          Mercredi <span class="text-zinc-600 tabular-nums">05/08</span>
+                        </th>
+                        <td class="border-t border-zinc-950/10 bg-rouge-50 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2">
+                          20h00
+                          <div class="mt-1 text-sm font-medium text-rouge-700">Rencontre</div>
+                        </td>
+                        <td class="border-t border-zinc-950/10 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2"></td>
+                        <td class="border-t border-zinc-950/10 bg-rouge-50 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2">17h30</td>
+                        <td class="border-t border-zinc-950/10 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2">
+                          14h00
+                          <div class="mt-1 text-sm font-medium text-rouge-700">CinéAnimés</div>
+                        </td>
+                        <td class="border-t border-zinc-950/10 bg-rouge-50 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-t border-zinc-950/10 bg-white py-4 pr-4 text-left align-middle text-base font-medium whitespace-nowrap text-zinc-900">
+                          Jeudi <span class="text-zinc-600 tabular-nums">06/08</span>
+                        </th>
+                        <td class="border-t border-zinc-950/10 bg-rouge-50 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2"></td>
+                        <td class="border-t border-zinc-950/10 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2">19h45</td>
+                        <td class="border-t border-zinc-950/10 bg-rouge-50 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2"></td>
+                        <td class="border-t border-zinc-950/10 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2"></td>
+                        <td class="border-t border-zinc-950/10 bg-rouge-50 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2">17h30</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-t border-zinc-950/10 bg-white py-4 pr-4 text-left align-middle text-base font-medium whitespace-nowrap text-zinc-900">
+                          Vendredi <span class="text-zinc-600 tabular-nums">07/08</span>
+                        </th>
+                        <td class="border-t border-zinc-950/10 bg-rouge-50 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2"></td>
+                        <td class="border-t border-zinc-950/10 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2"></td>
+                        <td class="border-t border-zinc-950/10 bg-rouge-50 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2">20h00</td>
+                        <td class="border-t border-zinc-950/10 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2">17h30</td>
+                        <td class="border-t border-zinc-950/10 bg-rouge-50 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2">14h00</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-t border-zinc-950/10 bg-white py-4 pr-4 text-left align-middle text-base font-medium whitespace-nowrap text-zinc-900">
+                          Samedi <span class="text-zinc-600 tabular-nums">08/08</span>
+                        </th>
+                        <td class="border-t border-zinc-950/10 bg-rouge-50 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2">20h00</td>
+                        <td class="border-t border-zinc-950/10 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2"></td>
+                        <td class="border-t border-zinc-950/10 bg-rouge-50 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2">17h00</td>
+                        <td class="border-t border-zinc-950/10 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2">14h00</td>
+                        <td class="border-t border-zinc-950/10 bg-rouge-50 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-t border-zinc-950/10 bg-white py-4 pr-4 text-left align-middle text-base font-medium whitespace-nowrap text-zinc-900">
+                          Dimanche <span class="text-zinc-600 tabular-nums">09/08</span>
+                        </th>
+                        <td class="border-t border-zinc-950/10 bg-rouge-50 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2"></td>
+                        <td class="border-t border-zinc-950/10 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2">19h45</td>
+                        <td class="border-t border-zinc-950/10 bg-rouge-50 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2">17h00</td>
+                        <td class="border-t border-zinc-950/10 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2">14h00</td>
+                        <td class="border-t border-zinc-950/10 bg-rouge-50 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-t border-zinc-950/10 bg-white py-4 pr-4 text-left align-middle text-base font-medium whitespace-nowrap text-zinc-900">
+                          Lundi <span class="text-zinc-600 tabular-nums">10/08</span>
+                        </th>
+                        <td class="border-t border-zinc-950/10 bg-rouge-50 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2"></td>
+                        <td class="border-t border-zinc-950/10 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2"></td>
+                        <td class="border-t border-zinc-950/10 bg-rouge-50 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2"></td>
+                        <td class="border-t border-zinc-950/10 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2"></td>
+                        <td class="border-t border-zinc-950/10 bg-rouge-50 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2">20h00</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-t border-zinc-950/10 bg-white py-4 pr-4 text-left align-middle text-base font-medium whitespace-nowrap text-zinc-900">
+                          Mardi <span class="text-zinc-600 tabular-nums">11/08</span>
+                        </th>
+                        <td class="border-t border-zinc-950/10 bg-rouge-50 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2">
+                          12h30
+                          <div class="mt-1 text-sm font-medium text-rouge-700">Midi-doc · Tiroir des Saveurs</div>
+                        </td>
+                        <td class="border-t border-zinc-950/10 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2">20h00</td>
+                        <td class="border-t border-zinc-950/10 bg-rouge-50 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2"></td>
+                        <td class="border-t border-zinc-950/10 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2"></td>
+                        <td class="border-t border-zinc-950/10 bg-rouge-50 px-1.5 py-4 text-center align-middle text-base tabular-nums text-zinc-900 sm:px-2">
+                          14h00
+                          <div class="mt-1 text-sm font-medium text-rouge-700">CinéSenior</div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <p class="mt-6 text-base text-zinc-600">
+                Sauf mention contraire, les séances ont lieu au CinéXtra, place de l'Étang à Marche-en-Famenne.
+              </p>
+            </div>
+
+        <div class="mx-auto mt-10 max-w-7xl px-4 md:hidden sm:px-6 lg:px-8">
+              <ol role="list" class="grid gap-y-0">
+                <li class="border-t border-zinc-950/10 py-6">
+                  <div class="grid gap-x-8 gap-y-4 sm:grid-cols-[10rem_minmax(0,1fr)]">
+                    <h3 class="font-display text-xl font-medium text-zinc-900">
+                      Mercredi <span class="text-rouge-600 tabular-nums">05/08</span>
+                    </h3>
+                    <ul role="list" class="grid gap-y-3">
+                      <li class="flex items-baseline gap-x-3">
+                        <p class="w-16 shrink-0 font-display text-lg font-medium tabular-nums text-rouge-600">14h00</p>
+                        <div class="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-3 gap-y-1">
+                          <p class="text-base font-medium text-zinc-900">Les Parfait(s) : Arnaques en famille</p>
+                        <p class="rounded-full bg-rouge-100 px-2 py-1 text-sm font-medium text-rouge-700">CinéAnimés</p>
+                        </div>
+                      </li>
+                      <li class="flex items-baseline gap-x-3">
+                        <p class="w-16 shrink-0 font-display text-lg font-medium tabular-nums text-rouge-600">17h30</p>
+                        <div class="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-3 gap-y-1">
+                          <p class="text-base font-medium text-zinc-900">Sainte-Marie-aux-Mines</p>
+                        </div>
+                      </li>
+                      <li class="flex items-baseline gap-x-3">
+                        <p class="w-16 shrink-0 font-display text-lg font-medium tabular-nums text-rouge-600">20h00</p>
+                        <div class="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-3 gap-y-1">
+                          <p class="text-base font-medium text-zinc-900">Soulèvements</p>
+                        <p class="rounded-full bg-rouge-100 px-2 py-1 text-sm font-medium text-rouge-700">Rencontre</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="border-t border-zinc-950/10 py-6">
+                  <div class="grid gap-x-8 gap-y-4 sm:grid-cols-[10rem_minmax(0,1fr)]">
+                    <h3 class="font-display text-xl font-medium text-zinc-900">
+                      Jeudi <span class="text-rouge-600 tabular-nums">06/08</span>
+                    </h3>
+                    <ul role="list" class="grid gap-y-3">
+                      <li class="flex items-baseline gap-x-3">
+                        <p class="w-16 shrink-0 font-display text-lg font-medium tabular-nums text-rouge-600">17h30</p>
+                        <div class="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-3 gap-y-1">
+                          <p class="text-base font-medium text-zinc-900">Pour le plaisir</p>
+                        </div>
+                      </li>
+                      <li class="flex items-baseline gap-x-3">
+                        <p class="w-16 shrink-0 font-display text-lg font-medium tabular-nums text-rouge-600">19h45</p>
+                        <div class="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-3 gap-y-1">
+                          <p class="text-base font-medium text-zinc-900">Orwell : 2 + 2 = 5</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="border-t border-zinc-950/10 py-6">
+                  <div class="grid gap-x-8 gap-y-4 sm:grid-cols-[10rem_minmax(0,1fr)]">
+                    <h3 class="font-display text-xl font-medium text-zinc-900">
+                      Vendredi <span class="text-rouge-600 tabular-nums">07/08</span>
+                    </h3>
+                    <ul role="list" class="grid gap-y-3">
+                      <li class="flex items-baseline gap-x-3">
+                        <p class="w-16 shrink-0 font-display text-lg font-medium tabular-nums text-rouge-600">14h00</p>
+                        <div class="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-3 gap-y-1">
+                          <p class="text-base font-medium text-zinc-900">Pour le plaisir</p>
+                        </div>
+                      </li>
+                      <li class="flex items-baseline gap-x-3">
+                        <p class="w-16 shrink-0 font-display text-lg font-medium tabular-nums text-rouge-600">17h30</p>
+                        <div class="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-3 gap-y-1">
+                          <p class="text-base font-medium text-zinc-900">Les Parfait(s) : Arnaques en famille</p>
+                        </div>
+                      </li>
+                      <li class="flex items-baseline gap-x-3">
+                        <p class="w-16 shrink-0 font-display text-lg font-medium tabular-nums text-rouge-600">20h00</p>
+                        <div class="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-3 gap-y-1">
+                          <p class="text-base font-medium text-zinc-900">Sainte-Marie-aux-Mines</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="border-t border-zinc-950/10 py-6">
+                  <div class="grid gap-x-8 gap-y-4 sm:grid-cols-[10rem_minmax(0,1fr)]">
+                    <h3 class="font-display text-xl font-medium text-zinc-900">
+                      Samedi <span class="text-rouge-600 tabular-nums">08/08</span>
+                    </h3>
+                    <ul role="list" class="grid gap-y-3">
+                      <li class="flex items-baseline gap-x-3">
+                        <p class="w-16 shrink-0 font-display text-lg font-medium tabular-nums text-rouge-600">14h00</p>
+                        <div class="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-3 gap-y-1">
+                          <p class="text-base font-medium text-zinc-900">Les Parfait(s) : Arnaques en famille</p>
+                        </div>
+                      </li>
+                      <li class="flex items-baseline gap-x-3">
+                        <p class="w-16 shrink-0 font-display text-lg font-medium tabular-nums text-rouge-600">17h00</p>
+                        <div class="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-3 gap-y-1">
+                          <p class="text-base font-medium text-zinc-900">Sainte-Marie-aux-Mines</p>
+                        </div>
+                      </li>
+                      <li class="flex items-baseline gap-x-3">
+                        <p class="w-16 shrink-0 font-display text-lg font-medium tabular-nums text-rouge-600">20h00</p>
+                        <div class="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-3 gap-y-1">
+                          <p class="text-base font-medium text-zinc-900">Soulèvements</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="border-t border-zinc-950/10 py-6">
+                  <div class="grid gap-x-8 gap-y-4 sm:grid-cols-[10rem_minmax(0,1fr)]">
+                    <h3 class="font-display text-xl font-medium text-zinc-900">
+                      Dimanche <span class="text-rouge-600 tabular-nums">09/08</span>
+                    </h3>
+                    <ul role="list" class="grid gap-y-3">
+                      <li class="flex items-baseline gap-x-3">
+                        <p class="w-16 shrink-0 font-display text-lg font-medium tabular-nums text-rouge-600">14h00</p>
+                        <div class="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-3 gap-y-1">
+                          <p class="text-base font-medium text-zinc-900">Les Parfait(s) : Arnaques en famille</p>
+                        </div>
+                      </li>
+                      <li class="flex items-baseline gap-x-3">
+                        <p class="w-16 shrink-0 font-display text-lg font-medium tabular-nums text-rouge-600">17h00</p>
+                        <div class="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-3 gap-y-1">
+                          <p class="text-base font-medium text-zinc-900">Sainte-Marie-aux-Mines</p>
+                        </div>
+                      </li>
+                      <li class="flex items-baseline gap-x-3">
+                        <p class="w-16 shrink-0 font-display text-lg font-medium tabular-nums text-rouge-600">19h45</p>
+                        <div class="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-3 gap-y-1">
+                          <p class="text-base font-medium text-zinc-900">Orwell : 2 + 2 = 5</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="border-t border-zinc-950/10 py-6">
+                  <div class="grid gap-x-8 gap-y-4 sm:grid-cols-[10rem_minmax(0,1fr)]">
+                    <h3 class="font-display text-xl font-medium text-zinc-900">
+                      Lundi <span class="text-rouge-600 tabular-nums">10/08</span>
+                    </h3>
+                    <ul role="list" class="grid gap-y-3">
+                      <li class="flex items-baseline gap-x-3">
+                        <p class="w-16 shrink-0 font-display text-lg font-medium tabular-nums text-rouge-600">20h00</p>
+                        <div class="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-3 gap-y-1">
+                          <p class="text-base font-medium text-zinc-900">Pour le plaisir</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="border-y border-zinc-950/10 py-6">
+                  <div class="grid gap-x-8 gap-y-4 sm:grid-cols-[10rem_minmax(0,1fr)]">
+                    <h3 class="font-display text-xl font-medium text-zinc-900">
+                      Mardi <span class="text-rouge-600 tabular-nums">11/08</span>
+                    </h3>
+                    <ul role="list" class="grid gap-y-3">
+                      <li class="flex items-baseline gap-x-3">
+                        <p class="w-16 shrink-0 font-display text-lg font-medium tabular-nums text-rouge-600">12h30</p>
+                        <div class="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-3 gap-y-1">
+                          <p class="text-base font-medium text-zinc-900">Soulèvements</p>
+                        <p class="rounded-full bg-rouge-100 px-2 py-1 text-sm font-medium text-rouge-700">Midi-doc · Tiroir des Saveurs</p>
+                        </div>
+                      </li>
+                      <li class="flex items-baseline gap-x-3">
+                        <p class="w-16 shrink-0 font-display text-lg font-medium tabular-nums text-rouge-600">14h00</p>
+                        <div class="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-3 gap-y-1">
+                          <p class="text-base font-medium text-zinc-900">Pour le plaisir</p>
+                        <p class="rounded-full bg-rouge-100 px-2 py-1 text-sm font-medium text-rouge-700">CinéSenior</p>
+                        </div>
+                      </li>
+                      <li class="flex items-baseline gap-x-3">
+                        <p class="w-16 shrink-0 font-display text-lg font-medium tabular-nums text-rouge-600">20h00</p>
+                        <div class="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-3 gap-y-1">
+                          <p class="text-base font-medium text-zinc-900">Orwell : 2 + 2 = 5</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ol>
+
+              <p class="mt-6 text-base text-zinc-600">
+                Sauf mention contraire, les séances ont lieu au CinéXtra, place de l'Étang à Marche-en-Famenne.
+              </p>
+            </div>
+      </section>
+
+      <!-- ═══════════════════ Prochainement ═══════════════════ -->
+      <section id="prochainement" class="scroll-mt-20 border-t border-zinc-950/10 py-16 sm:py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p class="font-display text-lg font-medium text-rouge-600 sm:text-base">Prochainement</p>
+          <h2 class="mt-2 max-w-[35ch] font-display text-3xl font-semibold text-zinc-900 text-balance sm:text-4xl">
+            Les films programmés par Cinémarche
+          </h2>
+          <p class="mt-4 max-w-[56ch] text-lg text-pretty text-zinc-600 sm:text-base">
+            Documentaires, films d'auteur, animations et comédies, souvent accompagnés d'une
+            rencontre ou d'une animation.
+          </p>
+        </div>
+
+        <div class="mx-auto mt-12 max-w-7xl px-4 sm:px-6 lg:px-8">
+              <ul role="list" class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <li class="flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-zinc-950/10">
+                  <img src="assets/img/affiches/soulevements.jpg" alt="Affiche de Soulèvements : une foule de marcheurs vue de dos traverse un champ sous un grand ciel bleu." class="aspect-31/42 w-full object-cover" />
+                  <div class="flex flex-1 flex-col gap-y-3 p-6">
+                    <p class="text-sm font-medium text-rouge-600">Documentaire · Midi-doc</p>
+                    <h3 class="font-display text-2xl font-medium text-zinc-900">Soulèvements</h3>
+                    <p class="text-base text-zinc-600">Thomas Lacoste · 2025 · 1 h 45</p>
+                    <p class="text-base/7 text-pretty text-zinc-600">
+                      Un portrait choral à seize voix, filmé au plus près d'un mouvement de
+                      résistance intergénérationnel qui s'oppose à l'accaparement des terres et de
+                      l'eau et invente d'autres façons d'habiter le vivant.
+                    </p>
+                  </div>
+                </li>
+                <li class="flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-zinc-950/10">
+                  <img src="assets/img/affiches/orwell-2-2-5.jpg" alt="Affiche d'Orwell : 2 + 2 = 5 : un dessin au trait noir où un poing ganté s'abat sur un visage, le titre en rouge." class="aspect-31/42 w-full object-cover" />
+                  <div class="flex flex-1 flex-col gap-y-3 p-6">
+                    <p class="text-sm font-medium text-rouge-600">Documentaire · Ciné-club</p>
+                    <h3 class="font-display text-2xl font-medium text-zinc-900">Orwell : 2 + 2 = 5</h3>
+                    <p class="text-base text-zinc-600">Raoul Peck · 2025 · 2 h 00</p>
+                    <p class="text-base/7 text-pretty text-zinc-600">
+                      Les derniers mois de George Orwell et la genèse de 1984 : novlangue, crime par
+                      la pensée, Big Brother. Un montage d'archives et d'images d'actualité qui
+                      renvoie brutalement au présent.
+                    </p>
+                  </div>
+                </li>
+                <li class="flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-zinc-950/10">
+                  <img src="assets/img/affiches/sainte-marie-aux-mines.jpg" alt="Affiche de Sainte-Marie-aux-Mines : deux hommes se dévisagent devant un paysage de collines, une bague à gros diamant au premier plan." class="aspect-31/42 w-full object-cover" />
+                  <div class="flex flex-1 flex-col gap-y-3 p-6">
+                    <p class="text-sm font-medium text-rouge-600">Comédie policière · Belgique</p>
+                    <h3 class="font-display text-2xl font-medium text-zinc-900">Sainte-Marie-aux-Mines</h3>
+                    <p class="text-base text-zinc-600">Claude Schmitz · 2025 · 1 h 26</p>
+                    <p class="text-base/7 text-pretty text-zinc-600">
+                      Mutés en Alsace à titre disciplinaire, les inspecteurs Crab et Conrad héritent
+                      d'une enquête sans difficulté : la disparition d'une bague. La simple
+                      formalité tourne au vertige.
+                    </p>
+                  </div>
+                </li>
+                <li class="flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-zinc-950/10">
+                  <img src="assets/img/affiches/les-parfaits.jpg" alt="Affiche des Parfait(s) : Arnaques en famille : six membres d'une même famille posent serrés, l'air faussement innocent." class="aspect-31/42 w-full object-cover" />
+                  <div class="flex flex-1 flex-col gap-y-3 p-6">
+                    <p class="text-sm font-medium text-rouge-600">Comédie · Jeune public</p>
+                    <h3 class="font-display text-2xl font-medium text-zinc-900">Les Parfait(s) : Arnaques en famille</h3>
+                    <p class="text-base text-zinc-600">Ludovic Bernard · 2026 · 1 h 34</p>
+                    <p class="text-base/7 text-pretty text-zinc-600">
+                      Chez les Toussaint, du grand-père au petit dernier, l'arnaque est un art qui
+                      rapporte. Poursuivis, ils doivent emprunter l'identité d'une famille sans
+                      histoire et se réfugier en Écosse.
+                    </p>
+                  </div>
+                </li>
+                <li class="flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-zinc-950/10">
+                  <img src="assets/img/affiches/pour-le-plaisir.jpg" alt="Affiche de Pour le plaisir : une femme et un homme hilares marchent main dans la main dans une rue pavée, drapés dans des draps blancs." class="aspect-31/42 w-full object-cover" />
+                  <div class="flex flex-1 flex-col gap-y-3 p-6">
+                    <p class="text-sm font-medium text-rouge-600">Comédie · CinéSenior</p>
+                    <h3 class="font-display text-2xl font-medium text-zinc-900">Pour le plaisir</h3>
+                    <p class="text-base text-zinc-600">Reem Kherici · 2026 · 1 h 30</p>
+                    <p class="text-base/7 text-pretty text-zinc-600">
+                      Fanny et Tom s'aiment depuis vingt ans quand un secret éclate. Tom, ingénieur,
+                      se lance alors dans une invention qui va bouleverser leur couple autant que
+                      leurs certitudes.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+      </section>
+
+      <!-- ═══════════════════ Lettre d'info ═══════════════════ -->
+      <section class="py-16 sm:py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="relative overflow-hidden rounded-2xl bg-nuit-950 p-8 sm:p-12 lg:p-16">
+            <div
+              class="pointer-events-none absolute -right-32 -bottom-32 size-96 rounded-full bg-brand-500/20 blur-3xl"
+              aria-hidden="true"
+            ></div>
+
+            <div class="relative grid gap-x-8 gap-y-10 lg:grid-cols-2 lg:items-start">
+              <div>
+                <h2 class="max-w-[30ch] font-display text-3xl font-semibold text-white text-balance sm:text-4xl">
+                  La lettre d'info Cinémarche
+                </h2>
+                <p class="mt-4 max-w-[56ch] text-lg text-pretty text-zinc-300 sm:text-base">
+                  Le programme de la semaine, les séances thématiques et les avant-premières, une
+                  fois par semaine dans votre boîte mail.
+                </p>
+              </div>
+
+              <form class="grid gap-y-6">
+                <fieldset class="grid gap-y-3">
+                  <legend class="text-base font-medium text-white">Je souhaite</legend>
+                  <div class="flex items-center gap-x-3">
+                    <span class="flex h-lh items-center text-base sm:text-sm">
+                      <span class="group inline-grid size-5 grid-cols-1 sm:size-4">
+                        <input
+                          type="radio"
+                          id="lettre-inscription"
+                          name="action"
+                          value="inscription"
+                          checked
+                          class="col-start-1 row-start-1 appearance-none rounded-full border border-white/20 bg-white/5 checked:border-brand-400 checked:bg-brand-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-300 disabled:border-white/5 disabled:bg-white/10 forced-colors:appearance-auto"
+                        />
+                        <span
+                          class="pointer-events-none col-start-1 row-start-1 size-[round(down,40%,1px)] self-center justify-self-center rounded-full bg-nuit-950 group-not-has-checked:opacity-0 group-has-disabled:bg-white/25"
+                        ></span>
+                      </span>
+                    </span>
+                    <label for="lettre-inscription" class="text-base text-zinc-200 sm:text-sm">M'inscrire à la lettre d'info</label>
+                  </div>
+                  <div class="flex items-center gap-x-3">
+                    <span class="flex h-lh items-center text-base sm:text-sm">
+                      <span class="group inline-grid size-5 grid-cols-1 sm:size-4">
+                        <input
+                          type="radio"
+                          id="lettre-desinscription"
+                          name="action"
+                          value="desinscription"
+                          class="col-start-1 row-start-1 appearance-none rounded-full border border-white/20 bg-white/5 checked:border-brand-400 checked:bg-brand-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-300 disabled:border-white/5 disabled:bg-white/10 forced-colors:appearance-auto"
+                        />
+                        <span
+                          class="pointer-events-none col-start-1 row-start-1 size-[round(down,40%,1px)] self-center justify-self-center rounded-full bg-nuit-950 group-not-has-checked:opacity-0 group-has-disabled:bg-white/25"
+                        ></span>
+                      </span>
+                    </span>
+                    <label for="lettre-desinscription" class="text-base text-zinc-200 sm:text-sm">Me désinscrire</label>
+                  </div>
+                </fieldset>
+
+                <div class="grid gap-y-2">
+                  <label for="lettre-email" class="text-base font-medium text-white sm:text-sm">Adresse e-mail</label>
+                  <div class="flex flex-wrap items-center gap-3">
+                    <input
+                      type="email"
+                      id="lettre-email"
+                      name="email"
+                      required
+                      autocomplete="email"
+                      placeholder="vous@exemple.be"
+                      class="w-full min-w-0 max-w-xs rounded-lg bg-white/5 px-3 py-2.5 text-base text-white ring-1 ring-white/15 placeholder:text-zinc-400 focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-brand-300 sm:py-2"
+                    />
+                    <button
+                      type="submit"
+                      class="shrink-0 rounded-lg bg-white px-3 py-2.5 text-base font-medium text-nuit-950 hover:bg-brand-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-300 sm:py-2"
+                    >
+                      Valider
+                    </button>
+                  </div>
+                </div>
+
+                <p class="max-w-[56ch] text-base text-pretty text-zinc-300">
+                  Votre adresse sert uniquement à l'envoi de la lettre d'info. Vous pouvez vous
+                  désinscrire à tout moment.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ═══════════════════ Pied de page ═══════════════════ -->
+    <footer id="contact" class="scroll-mt-20 border-t border-zinc-950/10 bg-zinc-50">
+      <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <div class="grid gap-x-8 gap-y-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+          <div>
+            <a href="/" aria-label="Accueil Cinémarche">
+              <img src="assets/img/logo-cinemarche.png" alt="Cinémarche asbl" class="h-7 w-auto" />
+            </a>
+            <p class="mt-6 max-w-[48ch] text-base text-pretty text-zinc-600">
+              Le cinéma d'art et d'essai de Marche-en-Famenne, en partenariat avec la Maison de la
+              Culture Famenne-Ardenne, le Tiroir des Saveurs et le CinéXtra.
+            </p>
+            <ul role="list" class="mt-6 flex items-center gap-x-5">
+              <li>
+                <a
+                  href="https://www.facebook.com/asblCinemarche"
+                  class="relative flex text-zinc-600 hover:text-brand-700"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span class="sr-only">Cinémarche sur Facebook</span>
+                  <svg viewBox="0 0 24 24" class="size-6 shrink-0 fill-current" aria-hidden="true">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073Z" />
+                  </svg>
+                  <span class="absolute top-1/2 left-1/2 size-[max(100%,3rem)] -translate-1/2 pointer-fine:hidden" aria-hidden="true"></span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/cinemarche_asbl/"
+                  class="relative flex text-zinc-600 hover:text-brand-700"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span class="sr-only">Cinémarche sur Instagram</span>
+                  <svg viewBox="0 0 24 24" class="size-6 shrink-0 fill-current" aria-hidden="true">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069ZM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0Zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881Z" />
+                  </svg>
+                  <span class="absolute top-1/2 left-1/2 size-[max(100%,3rem)] -translate-1/2 pointer-fine:hidden" aria-hidden="true"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="grid gap-x-8 gap-y-10 sm:grid-cols-2">
+            <div>
+              <h2 class="text-base font-medium text-zinc-900">Nos partenaires</h2>
+              <ul role="list" class="mt-4 grid gap-y-3">
+                <li>
+                  <a href="https://www.cinextra.be/marche" target="_blank" rel="noreferrer" class="text-base font-normal text-zinc-600 hover:text-brand-700">CinéXtra Marche</a>
+                </li>
+                <li>
+                  <a href="https://www.mcfa.be/" target="_blank" rel="noreferrer" class="text-base font-normal text-zinc-600 hover:text-brand-700">Maison de la Culture Famenne-Ardenne</a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/asblCinemarche" target="_blank" rel="noreferrer" class="text-base font-normal text-zinc-600 hover:text-brand-700">Page Facebook Cinémarche</a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/cinemarche_asbl/" target="_blank" rel="noreferrer" class="text-base font-normal text-zinc-600 hover:text-brand-700">Compte Instagram Cinémarche</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 class="text-base font-medium text-zinc-900">Contact</h2>
+              <dl class="mt-4 grid gap-y-6">
+                <div>
+                  <dt class="text-base font-medium text-zinc-900">Cinémarche asbl</dt>
+                  <dd class="mt-1 text-base text-zinc-600">
+                    Avec la MCFA et le Tiroir des Saveurs<br />
+                    Chaussée de l'Ourthe 74, 6900 Marche-en-Famenne<br />
+                    <a href="tel:+3284327372" class="hover:text-brand-700">084/32.73.72</a> ·
+                    <a href="tel:+3284327389" class="hover:text-brand-700">084/32.73.89</a><br />
+                    <a href="mailto:info@cinemarche.be" class="font-medium text-brand-800 hover:text-brand-900">info@cinemarche.be</a>
+                  </dd>
+                </div>
+                <div>
+                  <dt class="text-base font-medium text-zinc-900">CinéXtra Marche</dt>
+                  <dd class="mt-1 text-base text-zinc-600">Place de l'Étang, 6900 Marche-en-Famenne</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-12 border-t border-zinc-950/10 pt-8 text-base text-zinc-600">
+          © 2026 Cinémarche asbl. Tous droits réservés.
+        </p>
+      </div>
+    </footer>
+
+  </body>
+</html>

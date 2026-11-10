@@ -1,0 +1,121 @@
+Présentation du projet
+
+**CineMarche ASBL** est l'association à but non lucratif qui gère le cinéma d'art et d'essai / cinéma culturel de Marche-en-Famenne (en partenariat avec la Maison de la Culture Famenne-Ardenne – MCFA, le Tiroir des Saveurs et le CinéXtra).
+
+### De quoi parle le site ?
+
+Le site web **cinemarche.marche.be** est la plateforme officielle d'information et de programmation de l'ASBL. On y trouve :
+
+* **La programmation cinéma :** Un calendrier complet des films à l'affiche et des projections à venir.
+* **Des séances thématiques :**
+* *Midis-documentaires* (projections suivies de repas ou débats à midi).
+* *CinéSéniors* et séances pour le jeune public / scolaires (*CinéAnimés*).
+* Événements spéciaux et avant-premières.
+
+
+* **Les informations pratiques :** Tarifs, lieux des projections (au complexe *CinéXtra* ou au *Tiroir des Saveurs* à Marche-en-Famenne), horaires, et abonnements.
+
+### Qui est-ce ?
+
+C'est un **acteur culturel local** dont l'objectif est de rendre un cinéma de qualité accessible à tous, en proposant une sélection variée de films (documentaires, films d'auteur, animations, comédies) souvent accompagnés de rencontres ou d'animations.
+
+### Structure du site
+
+Dans un premier temps la homepage
+
+Banner (titre) : La salle de ciné culturelle à Marche - au CineXtra et LOGO Cinémarche (le logo blue dans data/images)
+Ce logo peut être amélioré
+
+Sous-titres/description : Films Art et essai, ciné-clubs et événements
+
+Le BANNER : montage image type "pellicule" avec plusieurs photos du lieu, qu'on retravaillera peut-être avant (exemples dans data/images) :
+
+1. intérieur salle avec écran/power point Guillaume présentation film
+2. Le public dans la salle assis sur sièges (séniors papier vote)
+3. la devanture du CineXtra
+4. Atelier CinéAnimés
+
+Le menu du HAUT titres qui se suivent de gauche à droite :
+
+A l'affiche (ce texte apparait quand on laisse la souris dessus : détails des films programmés au CineXtra et ailleurs dans la semaine)
+Prochainement (détails pour tous les films programmés par l'asbl Cinémarche à venir)
+Contact : info@cinemarche.be
+
+En-dessous : affichage de la grille de programmation de la semaine (grille hebdo style agenda fond rouge et blanc)
+voir data/images grille* comme exemples
+Cette grille doit être facilement lisible et consultable "d'un coup d'oeil"
+En html, pas en image (accessiblité)
+
+En dessous on pourrait reprendre les films dans la programmation et faire une présentation attractive
+avec image, titre, réalisateur, année du film, court résumé
+soit créatif
+
+Prends en exemple ces 5 films, trouve l'affiche sur internet
+
+Soulèvements est un film réalisé par Thomas Lacoste
+Film : Orwell 2 + 2 = 5 Réalisé par Raoul Peck
+Sainte-Marie-aux-Mines De Claude Schmitz
+Les Parfait(s) : Arnaques en famille est un film franco-belge réalisé par Ludovic Bernard
+Pour le plaisir est un film français réalisé par Reem Kherici
+
+En dessous
+Inscription/désinscription lettre d'info
+
+Footer :
+
+    Page Facebook Cinémarche https://www.facebook.com/asblCinemarche
+    Compte Instagram Cinémarche https://www.instagram.com/cinemarche_asbl/
+    Site internet CineXtra https://www.cinextra.be/marche
+    Site internet MCFA https://www.mcfa.be/
+    Contact
+
+Cinémarche asbl (+ MCFA & Tiroir des Saveurs) : Chaussée de l'Ourthe, 74 - 6900 Marche - 084/32.73.72 - 084 32 73 89 - info@cinemarche.be
+CineXtra Marche : Place de l'Etang, 6900 Marche-en-Famenne
+
+### colors
+
+Suggestion ci-dessous
+Partir du blueu du logo
+A toi d'être créatif
+
+#A7D9E3
+#2596be
+#84CDD9
+#A6D8E2
+
+/* CSS HEX */
+--alice-blue: #d9f0ffff;
+--sky-blue: #a3d5ffff;
+--sky-blue-2: #83c9f4ff;
+
+/* CSS HSL */
+--alice-blue: hsla(204, 100%, 93%, 1);
+--sky-blue: hsla(207, 100%, 82%, 1);
+--sky-blue-2: hsla(203, 84%, 74%, 1);
+
+/* SCSS HEX */
+$alice-blue: #d9f0ffff;
+$sky-blue: #a3d5ffff;
+$sky-blue-2: #83c9f4ff;
+
+/* SCSS HSL */
+$alice-blue: hsla(204, 100%, 93%, 1);
+$sky-blue: hsla(207, 100%, 82%, 1);
+$sky-blue-2: hsla(203, 84%, 74%, 1);
+
+/* SCSS RGB */
+$alice-blue: rgba(217, 240, 255, 1);
+$sky-blue: rgba(163, 213, 255, 1);
+$sky-blue-2: rgba(131, 201, 244, 1);
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #d9f0ffff, #a3d5ffff, #83c9f4ff);
+$gradient-right: linear-gradient(90deg, #d9f0ffff, #a3d5ffff, #83c9f4ff);
+$gradient-bottom: linear-gradient(180deg, #d9f0ffff, #a3d5ffff, #83c9f4ff);
+$gradient-left: linear-gradient(270deg, #d9f0ffff, #a3d5ffff, #83c9f4ff);
+$gradient-top-right: linear-gradient(45deg, #d9f0ffff, #a3d5ffff, #83c9f4ff);
+$gradient-bottom-right: linear-gradient(135deg, #d9f0ffff, #a3d5ffff, #83c9f4ff);
+$gradient-top-left: linear-gradient(225deg, #d9f0ffff, #a3d5ffff, #83c9f4ff);
+$gradient-bottom-left: linear-gradient(315deg, #d9f0ffff, #a3d5ffff, #83c9f4ff);
+$gradient-radial: radial-gradient(#d9f0ffff, #a3d5ffff, #83c9f4ff);
+

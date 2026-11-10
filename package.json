@@ -1,0 +1,15 @@
+{
+  "name": "cinemarche",
+  "version": "1.0.0",
+  "description": "Site de l'asbl Cinémarche — cinéma d'art et d'essai de Marche-en-Famenne",
+  "private": true,
+  "scripts": {
+    "build": "tailwindcss -i src/css/app.css -o assets/css/app.css --minify",
+    "dev": "tailwindcss -i src/css/app.css -o assets/css/app.css --watch",
+    "serve": "python3 -m http.server 8777"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

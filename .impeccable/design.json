@@ -1,0 +1,483 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-10T14:55:05+00:00",
+  "title": "Design System: Cinémarche ASBL",
+  "extensions": {
+    "colorMeta": {
+      "bleu-cinemarche": {
+        "role": "primary",
+        "displayName": "Bleu Cinémarche",
+        "tonalRamp": [
+          "#0d2b3b",
+          "#1a445a",
+          "#1a526b",
+          "#186382",
+          "#1a7ba1",
+          "#2596be",
+          "#4fb3d8",
+          "#83c9f4",
+          "#a7d9e3",
+          "#d9f0ff",
+          "#f0f9fc"
+        ]
+      },
+      "bleu-bouton": {
+        "role": "primary",
+        "displayName": "Bleu de bouton",
+        "tonalRamp": [
+          "#0d2b3b",
+          "#1a445a",
+          "#1a526b",
+          "#186382",
+          "#1a7ba1",
+          "#2596be",
+          "#4fb3d8",
+          "#83c9f4",
+          "#a7d9e3",
+          "#d9f0ff",
+          "#f0f9fc"
+        ]
+      },
+      "bleu-bouton-survol": {
+        "role": "primary",
+        "displayName": "Bleu de survol",
+        "tonalRamp": [
+          "#0d2b3b",
+          "#1a445a",
+          "#1a526b",
+          "#186382",
+          "#1a7ba1",
+          "#2596be",
+          "#4fb3d8",
+          "#83c9f4",
+          "#a7d9e3",
+          "#d9f0ff",
+          "#f0f9fc"
+        ]
+      },
+      "bleu-lien": {
+        "role": "primary",
+        "displayName": "Bleu de lien",
+        "tonalRamp": [
+          "#0d2b3b",
+          "#1a445a",
+          "#1a526b",
+          "#186382",
+          "#1a7ba1",
+          "#2596be",
+          "#4fb3d8",
+          "#83c9f4",
+          "#a7d9e3",
+          "#d9f0ff",
+          "#f0f9fc"
+        ]
+      },
+      "bleu-clair": {
+        "role": "primary",
+        "displayName": "Bleu clair",
+        "tonalRamp": [
+          "#0d2b3b",
+          "#1a445a",
+          "#1a526b",
+          "#186382",
+          "#1a7ba1",
+          "#2596be",
+          "#4fb3d8",
+          "#83c9f4",
+          "#a7d9e3",
+          "#d9f0ff",
+          "#f0f9fc"
+        ]
+      },
+      "bleu-ciel": {
+        "role": "primary",
+        "displayName": "Bleu ciel",
+        "tonalRamp": [
+          "#0d2b3b",
+          "#1a445a",
+          "#1a526b",
+          "#186382",
+          "#1a7ba1",
+          "#2596be",
+          "#4fb3d8",
+          "#83c9f4",
+          "#a7d9e3",
+          "#d9f0ff",
+          "#f0f9fc"
+        ]
+      },
+      "bleu-controle": {
+        "role": "primary",
+        "displayName": "Bleu de contrôle",
+        "tonalRamp": [
+          "#0d2b3b",
+          "#1a445a",
+          "#1a526b",
+          "#186382",
+          "#1a7ba1",
+          "#2596be",
+          "#4fb3d8",
+          "#83c9f4",
+          "#a7d9e3",
+          "#d9f0ff",
+          "#f0f9fc"
+        ]
+      },
+      "rouge-programme": {
+        "role": "secondary",
+        "displayName": "Rouge programme",
+        "tonalRamp": [
+          "#5f0d11",
+          "#9f1219",
+          "#c0161d",
+          "#d81f26",
+          "#fbc9c5",
+          "#fde3e1",
+          "#fef3f2"
+        ]
+      },
+      "rouge-libelle": {
+        "role": "secondary",
+        "displayName": "Rouge de libellé",
+        "tonalRamp": [
+          "#5f0d11",
+          "#9f1219",
+          "#c0161d",
+          "#d81f26",
+          "#fbc9c5",
+          "#fde3e1",
+          "#fef3f2"
+        ]
+      },
+      "rouge-pastille": {
+        "role": "secondary",
+        "displayName": "Rouge de pastille",
+        "tonalRamp": [
+          "#5f0d11",
+          "#9f1219",
+          "#c0161d",
+          "#d81f26",
+          "#fbc9c5",
+          "#fde3e1",
+          "#fef3f2"
+        ]
+      },
+      "rouge-colonne": {
+        "role": "secondary",
+        "displayName": "Rouge de colonne",
+        "tonalRamp": [
+          "#5f0d11",
+          "#9f1219",
+          "#c0161d",
+          "#d81f26",
+          "#fbc9c5",
+          "#fde3e1",
+          "#fef3f2"
+        ]
+      },
+      "noir-de-salle": {
+        "role": "neutral",
+        "displayName": "Noir de salle",
+        "tonalRamp": [
+          "#0a1720",
+          "#12222c",
+          "#1a2e39"
+        ]
+      },
+      "noir-de-cadre": {
+        "role": "neutral",
+        "displayName": "Noir de cadre",
+        "tonalRamp": [
+          "#0a1720",
+          "#12222c",
+          "#1a2e39"
+        ]
+      },
+      "blanc": {
+        "role": "neutral",
+        "displayName": "Blanc",
+        "tonalRamp": [
+          "#18181b",
+          "#27272a",
+          "#3f3f46",
+          "#52525c",
+          "#9f9fa9",
+          "#d4d4d8",
+          "#e4e4e7",
+          "#fafafa"
+        ]
+      },
+      "gris-de-pied": {
+        "role": "neutral",
+        "displayName": "Gris de pied",
+        "tonalRamp": [
+          "#18181b",
+          "#27272a",
+          "#3f3f46",
+          "#52525c",
+          "#9f9fa9",
+          "#d4d4d8",
+          "#e4e4e7",
+          "#fafafa"
+        ]
+      },
+      "encre-titre": {
+        "role": "neutral",
+        "displayName": "Encre de titre",
+        "tonalRamp": [
+          "#18181b",
+          "#27272a",
+          "#3f3f46",
+          "#52525c",
+          "#9f9fa9",
+          "#d4d4d8",
+          "#e4e4e7",
+          "#fafafa"
+        ]
+      },
+      "encre": {
+        "role": "neutral",
+        "displayName": "Encre",
+        "tonalRamp": [
+          "#18181b",
+          "#27272a",
+          "#3f3f46",
+          "#52525c",
+          "#9f9fa9",
+          "#d4d4d8",
+          "#e4e4e7",
+          "#fafafa"
+        ]
+      },
+      "encre-secondaire": {
+        "role": "neutral",
+        "displayName": "Encre secondaire",
+        "tonalRamp": [
+          "#18181b",
+          "#27272a",
+          "#3f3f46",
+          "#52525c",
+          "#9f9fa9",
+          "#d4d4d8",
+          "#e4e4e7",
+          "#fafafa"
+        ]
+      },
+      "clair-sur-sombre": {
+        "role": "neutral",
+        "displayName": "Clair sur sombre",
+        "tonalRamp": [
+          "#18181b",
+          "#27272a",
+          "#3f3f46",
+          "#52525c",
+          "#9f9fa9",
+          "#d4d4d8",
+          "#e4e4e7",
+          "#fafafa"
+        ]
+      },
+      "indication-sur-sombre": {
+        "role": "neutral",
+        "displayName": "Indication sur sombre",
+        "tonalRamp": [
+          "#18181b",
+          "#27272a",
+          "#3f3f46",
+          "#52525c",
+          "#9f9fa9",
+          "#d4d4d8",
+          "#e4e4e7",
+          "#fafafa"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Titre de la bannière, un seul par page."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Titres de section."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Titres de film dans les cartes, jours de la liste mobile."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texte courant, 18px minimum."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Types de séance, genres, libellés de formulaire, 16px."
+      }
+    },
+    "shadows": [
+      {
+        "name": "infobulle",
+        "value": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+        "purpose": "Infobulles du menu uniquement."
+      }
+    ],
+    "motion": [],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Bouton principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Action principale d'une zone, sur fond sombre ou clair.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Voir la grille de la semaine</a>",
+      "css": ".ds-btn-primary{display:inline-block;background:#1a7ba1;color:#fff;font:500 1.125rem/1.75rem InterVariable,system-ui,sans-serif;padding:10px 12px;border-radius:8px;box-shadow:0 0 0 1px #1a7ba1;text-decoration:none}.ds-btn-primary:hover{background:#186382}.ds-btn-primary:focus-visible{outline:2px solid #83c9f4;outline-offset:2px}"
+    },
+    {
+      "name": "Bouton clair",
+      "kind": "button",
+      "refersTo": "button-light",
+      "description": "Validation d'un formulaire sur fond sombre.",
+      "html": "<div class=\"ds-dark\"><button class=\"ds-btn-light\">Valider</button></div>",
+      "css": ".ds-dark{background:#0a1720;padding:24px;border-radius:16px}.ds-btn-light{background:#fff;color:#0a1720;font:500 1.125rem/1.75rem InterVariable,system-ui,sans-serif;padding:10px 12px;border:0;border-radius:8px}.ds-btn-light:hover{background:#d9f0ff}.ds-btn-light:focus-visible{outline:2px solid #83c9f4;outline-offset:2px}"
+    },
+    {
+      "name": "Pastille de séance",
+      "kind": "chip",
+      "refersTo": "chip-seance",
+      "description": "Nomme le type de séance et le lieu s'il diffère du CinéXtra.",
+      "html": "<p class=\"ds-chip\">Midi-doc · Tiroir des Saveurs</p>",
+      "css": ".ds-chip{display:inline-block;margin:0;background:#fde3e1;color:#9f1219;font:500 1rem/1.5 InterVariable,system-ui,sans-serif;padding:4px 8px;border-radius:9999px}"
+    },
+    {
+      "name": "Séance (liste mobile)",
+      "kind": "custom",
+      "refersTo": "chip-seance",
+      "description": "Une séance dans la liste par jour : horaire, film, type.",
+      "html": "<div class=\"ds-seance\"><p class=\"ds-seance-h\">20h00</p><p class=\"ds-seance-t\">Soulèvements</p><p class=\"ds-seance-c\">Rencontre</p></div>",
+      "css": ".ds-seance{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}.ds-seance p{margin:0}.ds-seance-h{width:4rem;font:500 1.25rem/1.875rem Oswald,sans-serif;color:#c0161d;font-variant-numeric:tabular-nums}.ds-seance-t{font:500 1.125rem/1.75rem InterVariable,system-ui,sans-serif;color:#18181b}.ds-seance-c{background:#fde3e1;color:#9f1219;font:500 1rem/1.5 InterVariable,system-ui,sans-serif;padding:4px 8px;border-radius:9999px}"
+    },
+    {
+      "name": "Tête de colonne de la grille",
+      "kind": "custom",
+      "refersTo": "grille-film",
+      "description": "Titre du film en tête de colonne du tableau hebdomadaire.",
+      "html": "<div class=\"ds-grille-film\">Sainte-Marie-aux-Mines</div>",
+      "css": ".ds-grille-film{display:inline-block;background:#c0161d;color:#fff;font:500 1rem/1.5 Oswald,sans-serif;padding:6px 8px;border-radius:6px;text-align:center}"
+    },
+    {
+      "name": "Carte de film",
+      "kind": "card",
+      "refersTo": "card-film",
+      "description": "Un film à venir : genre, titre, crédits, résumé (l'affiche entière se place au-dessus).",
+      "html": "<article class=\"ds-card\"><p class=\"ds-card-g\">Documentaire · Ciné-club</p><h3 class=\"ds-card-t\">Orwell : 2 + 2 = 5</h3><p class=\"ds-card-c\">Raoul Peck · 2025 · 2 h 00</p><p class=\"ds-card-r\">Les derniers mois de George Orwell et la genèse de 1984.</p></article>",
+      "css": ".ds-card{display:grid;gap:12px;max-width:24rem;background:#fff;padding:24px;border-radius:16px;box-shadow:0 0 0 1px rgb(9 9 11 / 0.1)}.ds-card p,.ds-card h3{margin:0}.ds-card-g{font:500 1rem/1.5 InterVariable,system-ui,sans-serif;color:#c0161d}.ds-card-t{font:500 1.5rem/2rem Oswald,sans-serif;color:#18181b}.ds-card-c,.ds-card-r{font:400 1.125rem/1.75rem InterVariable,system-ui,sans-serif;color:#52525c}"
+    },
+    {
+      "name": "Champ e-mail sur fond sombre",
+      "kind": "input",
+      "refersTo": "input-sombre",
+      "description": "Champ de la lettre d'info, avec libellé visible.",
+      "html": "<div class=\"ds-dark\"><label class=\"ds-label\" for=\"ds-mail\">Adresse e-mail</label><input id=\"ds-mail\" class=\"ds-input\" type=\"email\" placeholder=\"vous@exemple.be\"></div>",
+      "css": ".ds-dark{background:#0a1720;padding:24px;border-radius:16px;display:grid;gap:8px}.ds-label{font:500 1rem/1.5 InterVariable,system-ui,sans-serif;color:#fff}.ds-input{max-width:20rem;background:rgb(255 255 255 / 0.05);color:#fff;font:400 1.125rem/1.75rem InterVariable,system-ui,sans-serif;padding:10px 12px;border:0;border-radius:8px;box-shadow:0 0 0 1px rgb(255 255 255 / 0.15)}.ds-input::placeholder{color:#9f9fa9}.ds-input:focus-visible{outline:2px solid #83c9f4;outline-offset:-1px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "La salle et la pellicule",
+    "overview": "**Creative North Star: \"La salle et la pellicule\"**\n\nOn entre par le noir de la salle. L'en-tête et la bannière sont plongés dans un bleu nuit presque noir, celui de la salle juste avant que le film commence, avec un halo bleu comme la lumière du projecteur. Le logo bleu, un titre en capitales étroites, puis une bande de pellicule 35 mm perforée qui montre quatre vraies photos du lieu : la présentation en salle, le public de CinéSenior, l'accueil du CinéXtra, un atelier CinéAnimés.\n\nDès qu'on passe à l'information, la lumière se rallume. La grille de la semaine, les films à venir et le pied de page sont sur fond blanc, encre foncée, et le rouge du logo prend le relais pour tout ce qui touche à la programmation : titres des films dans la grille, horaires, types de séance. Le noir de salle ne revient qu'une fois, pour le bloc de la lettre d'info.\n\nLe partage est donc simple : **le sombre accueille, le clair renseigne**. Le bleu donne l'ambiance et porte les actions, le rouge porte le programme. La densité est celle d'un programme qu'on lit d'un coup d'œil, avec de grandes respirations entre les sections.",
+    "keyCharacteristics": [
+      "Trois zones sombres seulement (en-tête, bannière, lettre d'info) ; toute l'information se lit sur blanc.",
+      "Deux couleurs de marque au rôle distinct : bleu pour l'ambiance et l'action, rouge pour la programmation.",
+      "Deux familles : Oswald, étroite et affirmée, pour les titres et les horaires ; Inter pour la lecture.",
+      "Texte courant à 18px, rien sous 16px, contraste du texte courant au moins 7:1.",
+      "La bande de pellicule est le seul motif décoratif, et elle encadre de vraies photos.",
+      "Presque sans ombre : la structure vient des aplats, des filets fins et des contours d'un pixel.",
+      "Polices auto-hébergées, aucun appel à un service tiers."
+    ],
+    "rules": [
+      {
+        "name": "La règle du sombre qui accueille",
+        "body": "Le noir de salle est réservé à trois zones : l'en-tête, la bannière et la lettre d'info. Aucune information de programmation ne se lit sur fond sombre. Test : si un horaire apparaît sur du bleu nuit, c'est un défaut.",
+        "section": "colors"
+      },
+      {
+        "name": "La règle des deux couleurs",
+        "body": "Le bleu dit « Cinémarche » et « cliquez ici » ; le rouge dit « programmation ». Un bouton n'est jamais rouge, un horaire n'est jamais bleu.",
+        "section": "colors"
+      },
+      {
+        "name": "La règle du gris plancher",
+        "body": "Sur fond clair, aucun texte n'est plus clair que l'encre secondaire. Sur fond sombre, aucun texte n'est plus foncé que le clair sur sombre, sauf le texte d'exemple d'un champ.",
+        "section": "colors"
+      },
+      {
+        "name": "La règle du libellé",
+        "body": "La couleur n'est jamais le seul canal : le type de séance (Rencontre, CinéAnimés, CinéSenior, Midi-doc) et le lieu quand ce n'est pas le CinéXtra sont toujours écrits.",
+        "section": "colors"
+      },
+      {
+        "name": "La règle du plancher 18px",
+        "body": "Toute phrase qui se lit (résumé, note, aide, infobulle) est à 18px au moins. Les 16px sont réservés aux libellés courts. Rien ne descend sous 16px, sur aucun écran.",
+        "section": "typography"
+      },
+      {
+        "name": "La règle des chiffres alignés",
+        "body": "Horaires et dates portent `tabular-nums` et gardent le format `20h00` et `05/08`.",
+        "section": "typography"
+      },
+      {
+        "name": "La règle du sur-titre sobre",
+        "body": "Le sur-titre de section est en Oswald, en casse normale, en rouge programme, sans interlettrage. Jamais de petites capitales espacées.",
+        "section": "typography"
+      },
+      {
+        "name": "La règle de l'ombre unique",
+        "body": "Seul ce qui flotte au-dessus de la page porte une ombre. Les cartes, les boutons et les blocs n'en ont pas.",
+        "section": "elevation"
+      },
+      {
+        "name": "La règle du halo",
+        "body": "Le halo bleu n'existe que sur le noir de salle, un par zone sombre. Les légendes des photos de la pellicule portent le seul dégradé du site, du noir de salle vers le transparent, pour garder le texte lisible sur l'image.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do garder la grille de la semaine en `<table>` sémantique avec sa version liste sous 768px. Jamais une image.",
+      "Do réserver le noir de salle à l'en-tête, à la bannière et à la lettre d'info, et mettre toute l'information sur blanc.",
+      "Do utiliser le bleu pour l'ambiance et les actions, le rouge pour la programmation.",
+      "Do tenir le texte courant à 18px et à 7:1 de contraste au moins ; vérifier chaque nouvelle paire de couleurs par le calcul.",
+      "Do écrire le type de séance et le lieu en toutes lettres, en plus de la couleur.",
+      "Do montrer les vraies photos du lieu et les affiches entières, dans leur format d'origine.",
+      "Do donner les crédits du film : réalisateur, année, durée.",
+      "Do servir les polices depuis `assets/fonts/`.",
+      "Do garder un focus visible (contour de 2px en bleu ciel) et des cibles tactiles d'au moins 48px.",
+      "Do modifier les tokens dans `src/css/app.css`, puis reconstruire avec `npm run build`."
+    ],
+    "donts": [
+      "Don't poser de texte blanc sur le bleu Cinémarche (#2596be) : il faut le bleu de bouton ou plus foncé.",
+      "Don't utiliser un gris plus clair que l'encre secondaire pour du texte sur fond clair.",
+      "Don't descendre sous 16px, ni mettre une phrase à lire sous 18px.",
+      "Don't charger une police, un script ou une feuille de style depuis un CDN tiers.",
+      "Don't étendre le fond sombre à la grille, aux cartes de film ou au pied de page.",
+      "Don't ajouter d'ombre aux cartes ou aux boutons, ni de rayon au-delà de 16px.",
+      "Don't ajouter de dégradé décoratif, de dégradé sur du texte ou un second halo dans une même zone.",
+      "Don't mettre de sur-titre en petites capitales espacées.",
+      "Don't remplacer la grille par un carrousel, ni les cartes « Prochainement » par un rang à faire défiler.",
+      "Don't écrire « RÉSERVER » en gros, ni de superlatif promotionnel.",
+      "Don't recadrer une affiche en carré ou la remplacer par un aplat de couleur."
+    ]
+  }
+}

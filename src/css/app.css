@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+/* Fichiers scannés pour la détection des classes utilisées */
+@source "../../index.html";
+
+/* Polices auto-hébergées (sous-ensemble latin, variables). Aucun appel à un CDN tiers. */
+@font-face {
+  font-family: "InterVariable";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/inter-variable-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("../fonts/oswald-variable-latin.woff2") format("woff2");
+}
+
+@theme {
+  /*
+   * Échelle de texte relevée pour le public sénior : le texte courant
+   * (text-base) est à 18px et rien ne descend sous 16px (text-sm, réservé
+   * aux libellés). Les valeurs par défaut de Tailwind sont 14 / 16 / 18 / 20.
+   */
+  --text-sm: 1rem;
+  --text-sm--line-height: calc(1.5 / 1);
+  --text-base: 1.125rem;
+  --text-base--line-height: calc(1.75 / 1.125);
+  --text-lg: 1.25rem;
+  --text-lg--line-height: calc(1.875 / 1.25);
+  --text-xl: 1.375rem;
+  --text-xl--line-height: calc(2 / 1.375);
+
+  --font-sans: "InterVariable", ui-sans-serif, system-ui, sans-serif;
+  --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss03";
+  --font-display: "Oswald", ui-sans-serif, system-ui, sans-serif;
+
+  /* Bleu du logo Cinémarche — couleur d'ambiance du site */
+  --color-brand-50: #f0f9fc;
+  --color-brand-100: #d9f0ff;
+  --color-brand-200: #a7d9e3;
+  --color-brand-300: #83c9f4;
+  --color-brand-400: #4fb3d8;
+  --color-brand-500: #2596be;
+  --color-brand-600: #1a7ba1;
+  --color-brand-700: #186382;
+  --color-brand-800: #1a526b;
+  --color-brand-900: #1a445a;
+  --color-brand-950: #0d2b3b;
+
+  /* Rouge du logo Cinémarche — grille de programmation et temps forts */
+  --color-rouge-50: #fef3f2;
+  --color-rouge-100: #fde3e1;
+  --color-rouge-200: #fbc9c5;
+  --color-rouge-500: #d81f26;
+  --color-rouge-600: #c0161d;
+  --color-rouge-700: #9f1219;
+  --color-rouge-900: #5f0d11;
+
+  /* Noir de salle */
+  --color-nuit-800: #1a2e39;
+  --color-nuit-900: #12222c;
+  --color-nuit-950: #0a1720;
+}
+
+/* Perforations de pellicule 35 mm */
+@utility film-perfs {
+  background-image: repeating-linear-gradient(
+    to right,
+    transparent 0 0.75rem,
+    var(--perf-color, #f4f4f5) 0.75rem 2rem,
+    transparent 2rem 2.75rem
+  );
+}

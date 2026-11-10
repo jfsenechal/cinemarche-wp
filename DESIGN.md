@@ -1,138 +1,291 @@
-<!-- SEED: re-run $impeccable document once there's code to capture the actual tokens and components. -->
 ---
 name: Cinémarche ASBL
-description: Le site de la salle de cinéma culturelle de Marche-en-Famenne : programmation hebdomadaire, ciné-clubs et événements.
+description: Le site de la salle de cinéma culturelle de Marche-en-Famenne, programmation hebdomadaire, ciné-clubs et événements.
+colors:
+  bleu-cinemarche: "#2596be"
+  bleu-bouton: "#1a7ba1"
+  bleu-bouton-survol: "#186382"
+  bleu-lien: "#1a526b"
+  bleu-clair: "#a7d9e3"
+  bleu-ciel: "#83c9f4"
+  bleu-controle: "#4fb3d8"
+  rouge-programme: "#c0161d"
+  rouge-libelle: "#9f1219"
+  rouge-pastille: "#fde3e1"
+  rouge-colonne: "#fef3f2"
+  noir-de-salle: "#0a1720"
+  noir-de-cadre: "#1a2e39"
+  blanc: "#ffffff"
+  gris-de-pied: "#fafafa"
+  encre-titre: "#18181b"
+  encre: "#27272a"
+  encre-secondaire: "#52525c"
+  clair-sur-sombre: "#d4d4d8"
+  indication-sur-sombre: "#9f9fa9"
+typography:
+  display:
+    fontFamily: "Oswald, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(2.25rem, 5vw, 3.75rem)"
+    fontWeight: 600
+    lineHeight: 1.05
+  headline:
+    fontFamily: "Oswald, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "2.25rem"
+    fontWeight: 600
+    lineHeight: 1.11
+  title:
+    fontFamily: "Oswald, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1.5rem"
+    fontWeight: 500
+    lineHeight: 1.33
+  body:
+    fontFamily: "InterVariable, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1.125rem"
+    fontWeight: 400
+    lineHeight: 1.556
+    fontFeature: "'cv02', 'cv03', 'cv04', 'cv11', 'ss03'"
+  label:
+    fontFamily: "InterVariable, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1rem"
+    fontWeight: 500
+    lineHeight: 1.5
+rounded:
+  md: "6px"
+  lg: "8px"
+  xl: "12px"
+  2xl: "16px"
+  full: "9999px"
+spacing:
+  gouttiere: "16px"
+  gouttiere-sm: "24px"
+  gouttiere-lg: "32px"
+  carte: "24px"
+  section: "64px"
+  section-sm: "96px"
+components:
+  button-primary:
+    backgroundColor: "{colors.bleu-bouton}"
+    textColor: "{colors.blanc}"
+    typography: "{typography.label}"
+    rounded: "{rounded.lg}"
+    padding: "10px 12px"
+  button-primary-hover:
+    backgroundColor: "{colors.bleu-bouton-survol}"
+  button-light:
+    backgroundColor: "{colors.blanc}"
+    textColor: "{colors.noir-de-salle}"
+    rounded: "{rounded.lg}"
+    padding: "10px 12px"
+  chip-seance:
+    backgroundColor: "{colors.rouge-pastille}"
+    textColor: "{colors.rouge-libelle}"
+    typography: "{typography.label}"
+    rounded: "{rounded.full}"
+    padding: "4px 8px"
+  grille-film:
+    backgroundColor: "{colors.rouge-programme}"
+    textColor: "{colors.blanc}"
+    rounded: "{rounded.md}"
+    padding: "6px 8px"
+  card-film:
+    backgroundColor: "{colors.blanc}"
+    textColor: "{colors.encre-secondaire}"
+    rounded: "{rounded.2xl}"
+    padding: "24px"
+  input-sombre:
+    textColor: "{colors.blanc}"
+    rounded: "{rounded.lg}"
+    padding: "10px 12px"
 ---
 
 # Design System: Cinémarche ASBL
 
-## 1. Overview
+Ce document décrit le design **retenu par le porteur du projet : la version 2**. Il est extrait du code du site (`index.html`, tokens dans `src/css/app.css`), repris de la maquette v2 et mis à niveau pour l'accessibilité. Les tokens du frontmatter sont normatifs ; la prose explique comment les appliquer.
 
-**Creative North Star: "Le fronton et le programme"**
+## Overview
 
-Deux objets réels tiennent tout le système. Le **fronton** : la devanture éclairée du CineXtra, les lettres sur cadre, l'annonce faite dans la rue à hauteur de passant. C'est le registre de la bannière et des titres : grand, franc, adressé à quelqu'un qui passe. Le **programme** : la feuille pliée en trois qu'on garde dans la poche de manteau, tramée, dense, où l'on trouve son horaire sans rien déplier de plus. C'est le registre de la grille hebdomadaire et de tout le texte courant : dense mais jamais serré, tabulaire, lisible du premier coup.
+**Creative North Star: "La salle et la pellicule"**
 
-Entre les deux, une troisième exigence, venue de la Cinémathèque : **le film est un document**. Titre, réalisateur, année, durée, affiche d'origine. On ne recadre pas une affiche pour qu'elle rentre dans une vignette carrée, on ne remplace pas des crédits par un slogan. Les crédits sont de l'information, au même titre qu'un horaire.
+On entre par le noir de la salle. L'en-tête et la bannière sont plongés dans un bleu nuit presque noir, celui de la salle juste avant que le film commence, avec un halo bleu comme la lumière du projecteur. Le logo bleu, un titre en capitales étroites, puis une bande de pellicule 35 mm perforée qui montre quatre vraies photos du lieu : la présentation en salle, le public de CinéSenior, l'accueil du CinéXtra, un atelier CinéAnimés.
 
-Ce système rejette explicitement, dans l'ordre des risques réels pour ce projet : le **site institutionnel communal** (le piège d'un `.marche.be` : liens gris en colonnes, programmation en PDF, aucune hiérarchie), le **multiplexe commercial** (fond noir, dégradés, boutons « RÉSERVER »), la **plateforme de streaming** (carrousels de vignettes à faire défiler à l'infini) et le **template SaaS lisse** (cartes identiques très arrondies, icônes pastel, sur-titres en majuscules au-dessus de chaque section). Le rendu « fait par une IA » est un échec de marque, pas un détail.
+Dès qu'on passe à l'information, la lumière se rallume. La grille de la semaine, les films à venir et le pied de page sont sur fond blanc, encre foncée, et le rouge du logo prend le relais pour tout ce qui touche à la programmation : titres des films dans la grille, horaires, types de séance. Le noir de salle ne revient qu'une fois, pour le bloc de la lettre d'info.
+
+Le partage est donc simple : **le sombre accueille, le clair renseigne**. Le bleu donne l'ambiance et porte les actions, le rouge porte le programme. La densité est celle d'un programme qu'on lit d'un coup d'œil, avec de grandes respirations entre les sections.
 
 **Key Characteristics:**
-- Palette de quatre rôles nommés, chacun codant une fonction précise, jamais une décoration.
-- Une seule famille typographique, hiérarchie portée par l'échelle et le poids (400 → 800).
-- Chiffres tabulaires obligatoires : la grille horaire est le cœur fonctionnel de la page.
-- Plat par défaut ; la profondeur vient de la couleur et du trait, pas de l'ombre.
-- Mouvement au service du retour d'information, aucune chorégraphie de défilement.
-- Densité de programme papier : beaucoup d'information par écran, aucune sensation d'entassement.
-- Le lieu et les films sont photographiés, jamais illustrés.
+- Trois zones sombres seulement (en-tête, bannière, lettre d'info) ; toute l'information se lit sur blanc.
+- Deux couleurs de marque au rôle distinct : bleu pour l'ambiance et l'action, rouge pour la programmation.
+- Deux familles : Oswald, étroite et affirmée, pour les titres et les horaires ; Inter pour la lecture.
+- Texte courant à 18px, rien sous 16px, contraste du texte courant au moins 7:1.
+- La bande de pellicule est le seul motif décoratif, et elle encadre de vraies photos.
+- Presque sans ombre : la structure vient des aplats, des filets fins et des contours d'un pixel.
+- Polices auto-hébergées, aucun appel à un service tiers.
 
-## 2. Colors
+## Colors
 
-Quatre rôles nommés, ancrés sur le **rouge du logo Cinémarche, `#D80000`**, échantillonné directement dans les trois fichiers du logo (`logo-cinemarche-red.png`, `Cinemarche-logo.jpg`, `Cinémarche-asbl-Logo-carre.jpg`) : hue 0, saturation 1.00, valeur identique dans les trois. La grille papier de l'ASBL (`grille pgm 2.jpeg`) est la même couleur passée en presse (`#C02818`).
-
-Le brief proposait de partir du bleu (`#A7D9E3`, `#2596be`, `#84CDD9`, `#A6D8E2`). L'inventaire des fichiers l'a contredit : le fichier « logo bleu » est une déclinaison monochrome délavée (saturation 0.41) du même dessin, et le bleu vif appartient au **CineXtra**, le complexe qui héberge les séances. Arbitrage confirmé par le porteur du projet : **le rouge identifie qui programme, le bleu identifie où l'on va.**
-
-Toutes les valeurs ci-dessous sont vérifiées par calcul de contraste, pas estimées.
+Un bleu nuit profond, le bleu et le rouge du logo, et des gris neutres légèrement froids sur blanc.
 
 ### Primary
-- **Rouge Cinémarche** `#D80000` · `oklch(0.554 0.227 29.2)` : la couleur du logo. Réservée au logo lui-même, aux traits d'accent et aux gros titres. **5.36:1 sur blanc** : suffisant pour du grand texte et des libellés, jamais pour du texte courant.
-- **Rouge de fronton** `#B00000` · `oklch(0.475 0.195 29.2)` : la version qui porte du texte. C'est elle qui remplit le bandeau haut, les colonnes de la grille et le pied de page. **7.38:1 avec le blanc, dans les deux sens** : conforme à la cible AAA.
+- **Bleu Cinémarche** (`bleu-cinemarche`, #2596be) : le bleu du logo. Couleur d'ambiance : halo flouté de la bannière et de la lettre d'info. Il ne porte **pas** de texte blanc (3.40:1).
+- **Bleu de bouton** (`bleu-bouton`, #1a7ba1) : fond du bouton principal et du lien d'évitement, sous du texte blanc (4.78:1). Au survol il fonce en **bleu de survol** (`bleu-bouton-survol`, #186382, 6.68:1).
+- **Bleu de lien** (`bleu-lien`, #1a526b) : lien d'adresse e-mail dans le pied de page (8.17:1 sur le gris de pied).
+- **Bleu clair** (`bleu-clair`, #a7d9e3) et **bleu ciel** (`bleu-ciel`, #83c9f4) : texte et liens sur fond sombre, sur-titre de la bannière, anneau de focus (11.83:1 et 10.05:1 sur le noir de salle).
+- **Bleu de contrôle** (`bleu-controle`, #4fb3d8) : bouton radio coché sur fond sombre.
 
 ### Secondary
-- **Bleu CineXtra** `#0F6386` · `oklch(0.471 0.092 232.8)` : le lieu, et rien d'autre. Texte et filet du badge indiquant où se tient la séance. **6.67:1 sur blanc.**
-- **Bleu de badge** `#E3F1F8` · `oklch(0.950 0.018 229.0)` : fond du badge de lieu, sous de l'encre (**15.75:1**).
-
-### Tertiary
-- **Ocre CinéAnimés** `#8A5A00` · `oklch(0.508 0.108 73.3)` : le jeune public. CinéAnimés, séances scolaires, ateliers. Teinte 73 contre teinte 29 pour le rouge : l'écart reste lisible en vision dichromate, et le libellé écrit reste obligatoire de toute façon.
-- **Ocre de badge** `#FBEED2` · `oklch(0.952 0.039 86.1)` : fond du badge jeune public, sous de l'encre (**15.80:1**).
+- **Rouge programme** (`rouge-programme`, #c0161d) : le rouge du logo. Bandeau du titre de film en tête de colonne de la grille (blanc dessus, 6.22:1), sur-titres de section, horaires et dates de la liste mobile, libellé de genre des cartes.
+- **Rouge de libellé** (`rouge-libelle`, #9f1219) : type de séance écrit dans une case ou une pastille (8.16:1 sur blanc, 7.50:1 sur le rouge de colonne, 6.70:1 sur le rouge de pastille).
+- **Rouge de pastille** (`rouge-pastille`, #fde3e1) : fond des pastilles de type de séance.
+- **Rouge de colonne** (`rouge-colonne`, #fef3f2) : une colonne sur deux de la grille, pour suivre un film de haut en bas.
 
 ### Neutral
-- **Blanc franc** `#FFFFFF` : cases libres de la grille, surfaces de lecture.
-- **Blanc de page** `#FCFAFA` · `oklch(0.987 0.002 17.2)` : fond général. Chroma 0.002 tiré vers la teinte du rouge, pas vers le chaud. Ce n'est pas un crème.
-- **Encre** `#1A1416` · `oklch(0.199 0.010 356.1)` : tout le texte courant. **18.17:1 sur blanc, 17.48:1 sur le blanc de page.**
-- **Gris de trait** `#8E8288` · `oklch(0.619 0.017 345.8)` : un seul gris, pour les filets et les bordures. **3.69:1 sur blanc**, au-dessus du minimum de 3:1 exigé pour un élément non textuel.
+- **Noir de salle** (`noir-de-salle`, #0a1720) : en-tête, bannière, bloc lettre d'info. Un noir bleuté, jamais un noir pur.
+- **Noir de cadre** (`noir-de-cadre`, #1a2e39) : le support de la bande de pellicule.
+- **Blanc** (`blanc`, #ffffff) : fond de toutes les zones de lecture.
+- **Gris de pied** (`gris-de-pied`, #fafafa) : fond du pied de page.
+- **Encre de titre** (`encre-titre`, #18181b) et **encre** (`encre`, #27272a) : titres et texte par défaut.
+- **Encre secondaire** (`encre-secondaire`, #52525c) : chapôs, crédits des films, dates, notes, pied de page (7.73:1 sur blanc, 7.40:1 sur le gris de pied). C'est le gris le plus clair autorisé pour du texte sur fond clair.
+- **Clair sur sombre** (`clair-sur-sombre`, #d4d4d8) : texte courant sur le noir de salle (12.28:1).
+- **Indication sur sombre** (`indication-sur-sombre`, #9f9fa9) : texte d'exemple du champ e-mail uniquement (6.91:1).
+- **Filets** : noir à 10 % d'opacité sur clair, blanc à 10 à 15 % sur sombre.
 
 ### Named Rules
 
-**La règle des quatre rôles.** Quatre couleurs, quatre fonctions : identité, exception, jeune public, lecture. Une cinquième couleur ne s'ajoute pas « pour varier ». Si une nouvelle catégorie de séance apparaît, elle se distingue par le mot et la position, pas par une teinte de plus.
+**La règle du sombre qui accueille.** Le noir de salle est réservé à trois zones : l'en-tête, la bannière et la lettre d'info. Aucune information de programmation ne se lit sur fond sombre. Test : si un horaire apparaît sur du bleu nuit, c'est un défaut.
 
-**La règle du libellé.** Aucune information n'est portée par la seule couleur. Le type de séance est toujours écrit en clair (CinéSéniors, CinéAnimés, Midi-documentaire, Avant-première). La couleur accélère le repérage pour ceux qui la voient ; elle n'est jamais le canal unique.
+**La règle des deux couleurs.** Le bleu dit « Cinémarche » et « cliquez ici » ; le rouge dit « programmation ». Un bouton n'est jamais rouge, un horaire n'est jamais bleu.
 
-**La règle des deux rouges.** Le rouge du logo (`#D80000`) ne porte jamais de texte courant blanc : il est trop clair pour ça (5.36:1). Dès qu'une surface rouge doit porter du texte, c'est le rouge de fronton (`#B00000`, 7.38:1). Test d'audit : un aplat rouge avec du blanc dessus qui n'est pas `#B00000` est un défaut.
+**La règle du gris plancher.** Sur fond clair, aucun texte n'est plus clair que l'encre secondaire. Sur fond sombre, aucun texte n'est plus foncé que le clair sur sombre, sauf le texte d'exemple d'un champ.
 
-**La règle du bleu réservé.** Le bleu ne signifie qu'une chose sur ce site : le lieu CineXtra. Il n'habille pas un bouton, ne souligne pas un titre, ne colore pas une section. Si le bleu apparaît ailleurs que dans un badge de lieu, c'est une erreur.
+**La règle du libellé.** La couleur n'est jamais le seul canal : le type de séance (Rencontre, CinéAnimés, CinéSenior, Midi-doc) et le lieu quand ce n'est pas le CinéXtra sont toujours écrits.
 
-**La règle du crème interdit.** Aucun fond crème, sable, beige, papier ou parchemin. La chaleur de cette marque vient des photos de la salle et de la voix, jamais d'un fond blanc teinté de jaune.
+## Typography
 
-## 3. Typography
+**Display Font:** Oswald (variable 200–700, utilisée en 500 et 600), avec repli sans-serif système
+**Body Font:** Inter variable (100–900, utilisée en 400 et 500), avec repli sans-serif système
+**Label/Mono Font:** aucune famille distincte
 
-**Display Font:** Atkinson Hyperlegible Next (variable 400–800), auto-hébergée
-**Body Font:** la même famille, poids inférieurs
-**Label/Mono Font:** aucune. Pas de monospace ; ce n'est pas une marque technique.
+**Character:** Oswald est étroite, verticale, héritée des titres d'affiche et de journal : elle donne aux titres et aux horaires une voix de fronton sans prendre de place. Inter fait le travail de lecture, avec ses variantes activées (`cv02`, `cv03`, `cv04`, `cv11`, `ss03`) qui lui donnent un « a » rond et des chiffres plus ouverts.
 
-**Character:** Atkinson Hyperlegible Next est dessinée par le **Braille Institute** dans un seul but : rester lisible pour les personnes malvoyantes. Ses lettres sont désambiguïsées une à une (le `1`, le `l` et le `I` ne se confondent pas, le `0` porte une contre-forme distincte du `O`, les apertures sont ouvertes). Ce n'est pas un choix décoratif : c'est le principe n°2 du projet (« lisible d'abord, et pour de vrai ») traduit en typographie, pour un public sénior prioritaire qui lit une grille horaire.
+Les deux polices sont **auto-hébergées** dans `assets/fonts/` en sous-ensemble latin (105 Ko pour Inter, 28 Ko pour Oswald), déclarées en `@font-face` avec `font-display: swap` et préchargées. Les licences OFL sont à côté des fichiers.
 
-Elle est **auto-hébergée** dans `assets/fonts/` (53 Ko pour les deux sous-ensembles latin et latin-ext). Aucun appel au CDN Google : une ASBL belge n'envoie pas l'adresse IP de ses visiteurs à un tiers pour afficher une police.
-
-La hiérarchie se fait par l'échelle et le poids (400 pour le courant, 600 pour les titres de section et les jours, 800 pour la bannière et les titres de film), pas par un second caractère.
+L'échelle de Tailwind est **relevée d'un cran** dans `@theme` : `text-sm` vaut 16px, `text-base` 18px, `text-lg` 20px, `text-xl` 22px.
 
 ### Hierarchy
-- **Display** (800, `clamp()` plafonné à 6rem, interlettrage ≥ -0.03em, line-height ~1.0) : titre de bannière, uniquement. Un seul par page.
-- **Headline** (800, environ 2 à 2.5rem) : titres de film dans la présentation détaillée.
-- **Title** (600, environ 1.35 à 1.6rem) : titres de section, en-têtes de jour dans la grille.
-- **Body** (400, **18px plancher**, line-height 1.55 à 1.65, longueur de ligne 65–75ch) : résumés de film, informations pratiques, tout le texte courant. Aucun texte informatif en dessous de 16px, y compris les mentions du pied de page.
-- **Label** (600, environ 0.95rem, casse normale) : types de séance, lieux, tarifs. **Pas de petites capitales espacées.**
+- **Display** (Oswald 600, 36px en mobile, 48px puis 60px en grand écran, interligne serré) : le titre de la bannière. Un seul par page, 24 caractères par ligne au plus.
+- **Headline** (Oswald 600, 30px puis 36px) : titres de section.
+- **Title** (Oswald 500, 24px pour un titre de film dans une carte, 22px pour un jour dans la liste mobile).
+- **Body** (Inter 400, 18px, interligne 28px ; chapô à 20px en mobile) : résumés, chapôs, notes, coordonnées. Longueur de ligne plafonnée à 56 caractères.
+- **Label** (Inter 500, 16px, casse normale) : types de séance, genre, libellés de formulaire, légendes des photos. En Oswald 500 : le sur-titre de section, les horaires de la liste mobile (20px) et le titre de film en tête de colonne (16px).
 
 ### Named Rules
 
-**La règle des chiffres tabulaires.** `font-variant-numeric: tabular-nums` sur toute la grille horaire et sur les tarifs. Les colonnes d'heures doivent s'aligner verticalement au pixel ; un `18h15` qui ne s'aligne pas avec le `20h00` du dessous casse la lecture en un coup d'œil.
+**La règle du plancher 18px.** Toute phrase qui se lit (résumé, note, aide, infobulle) est à 18px au moins. Les 16px sont réservés aux libellés courts. Rien ne descend sous 16px, sur aucun écran.
 
-**La règle du plancher 18px.** Le corps de texte ne descend pas sous 18px, sur aucun écran. Ce n'est pas un réglage esthétique : c'est le public prioritaire, séniors inclus.
+**La règle des chiffres alignés.** Horaires et dates portent `tabular-nums` et gardent le format `20h00` et `05/08`.
 
-**La règle du sur-titre unique.** Pas de petite étiquette en majuscules espacées au-dessus de chaque section. Si un sur-titre existe, c'est un système de marque nommé et délibéré, appliqué une fois, pas une grammaire répétée à chaque bloc.
+**La règle du sur-titre sobre.** Le sur-titre de section est en Oswald, en casse normale, en rouge programme, sans interlettrage. Jamais de petites capitales espacées.
 
-## 4. Elevation
+## Layout
 
-**Plat par défaut.** Ce système ne construit pas sa profondeur avec des ombres. Elle vient de trois choses : les aplats de couleur (le bleu de salle contre le blanc franc), le trait franc (les filets de la grille, une bordure nette), et la photographie à fond perdu. Une page peut n'avoir aucune `box-shadow` et être parfaitement structurée : c'est même l'état attendu au repos.
+Une colonne centrée de 1280px au plus (80rem), avec une gouttière de 16px en mobile, 24px à partir de 640px et 32px à partir de 1024px. Les sections sont séparées par 64px de marge verticale en mobile et 96px au-delà, et par un filet fin quand deux sections claires se suivent.
 
-L'ombre, si elle apparaît, est **une réponse à un état**, jamais un ornement au repos : un léger relief au survol d'une affiche, rien de plus. Énergie de mouvement retenue à « responsive » : les transitions servent le retour d'information.
+Ordre de la page d'accueil : en-tête collant, bannière avec la bande de pellicule, grille de la semaine, « Prochainement », lettre d'info, pied de page.
+
+Points de rupture observés :
+- **640px** : la pellicule passe de 2 × 2 photos carrées à 4 photos en 4:3 sur une ligne ; les cartes de film passent à 2 colonnes ; le pied de page à 2 colonnes.
+- **768px** : la grille de la semaine passe de la liste par jour au tableau.
+- **1024px** : le menu déroulant devient une barre de liens ; les cartes de film passent à 3 colonnes ; la lettre d'info met le texte et le formulaire côte à côte.
+
+Le tableau garde une largeur minimale de 768px et défile horizontalement dans son conteneur si l'écran est plus étroit ; la colonne des jours reste collée à gauche.
+
+## Elevation & Depth
+
+Le système est presque plat. La profondeur vient de trois choses : le contraste entre zones sombres et zones claires, les contours d'un pixel à 10 % d'opacité autour des cartes et de la pellicule, et les filets horizontaux de la grille.
+
+Deux effets seulement dépassent ce plan. Le **halo** : un disque de bleu Cinémarche à 20 % d'opacité, très flouté, placé derrière le contenu de la bannière et dans un coin du bloc lettre d'info. Et l'en-tête collant, noir de salle à 95 % avec un flou d'arrière-plan, pour rester lisible quand la page défile dessous.
+
+### Shadow Vocabulary
+- **Ombre d'infobulle** (`box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)`) : uniquement sur les infobulles du menu, qui flottent au-dessus de la page.
 
 ### Named Rules
 
-**La règle anti ghost-card.** Interdit de combiner `border: 1px solid` et une `box-shadow` large et diffuse (≥ 16px de flou) sur un même élément. On choisit : soit une bordure franche à la couleur de marque, soit une ombre définie de 8px de flou maximum. Jamais les deux comme décor.
+**La règle de l'ombre unique.** Seul ce qui flotte au-dessus de la page porte une ombre. Les cartes, les boutons et les blocs n'en ont pas.
 
-**La règle du rayon court.** Cartes, sections et champs plafonnent à 12–16px de rayon. La pastille complète est réservée aux étiquettes et aux boutons. Un rayon de 24, 32 ou 40px sur une carte est un défaut, pas un style.
+**La règle du halo.** Le halo bleu n'existe que sur le noir de salle, un par zone sombre. Les légendes des photos de la pellicule portent le seul dégradé du site, du noir de salle vers le transparent, pour garder le texte lisible sur l'image.
 
-## 5. Components
+## Shapes
 
-**[Aucun composant à documenter : rien n'est encore construit.]** Cette section se remplit au prochain passage de `$impeccable document`, en mode scan, depuis le vrai code.
+Des coins doux et courts. 6px pour les petites pièces (affiche miniature, bandeau de titre de film dans la grille), 8px pour les boutons, les champs et les liens du menu, 12px pour les infobulles, 16px pour les cartes de film, le cadre de la pellicule et le bloc lettre d'info. La pastille complète est réservée aux types de séance et aux boutons radio. Rien ne dépasse 16px.
 
-Un composant est déjà identifié comme signature et devra être documenté en premier : **la grille de programmation hebdomadaire**, en `<table>` sémantique (`<caption>`, `<th scope="col">` pour les films, `<th scope="row">` pour les jours), fond bleu de salle et blanc franc, chiffres tabulaires, jamais une image, jamais une grille CSS sans sémantique.
+Les bords sont des contours d'un pixel plutôt que des bordures épaisses. La forme propre au site est la **perforation de pellicule** : une rangée de rectangles clairs répétés au-dessus et en dessous des photos (utilitaire `film-perfs`).
 
-## 6. Do's and Don'ts
+Les affiches gardent leur format d'origine (rapport 31:42) et ne sont jamais recadrées en carré.
+
+## Components
+
+### Buttons
+- **Shape :** coins doux (8px), hauteur de 48px en mobile.
+- **Primary :** bleu de bouton, texte blanc en Inter 500 à 18px, contour d'un pixel de la même couleur. Un seul par zone (« Voir la grille de la semaine »).
+- **Hover / Focus :** fonce en bleu de survol ; focus par un contour de 2px en bleu ciel, décalé de 2px.
+- **Sur fond sombre (formulaire) :** bouton blanc à texte noir de salle (« Valider »), survol en bleu très pâle.
+- **Lien secondaire :** texte seul en bleu clair suivi d'une flèche, blanc au survol.
+
+### Chips
+- **Style :** pastille complète, fond rouge de pastille, texte rouge de libellé en Inter 500 à 16px.
+- **Rôle :** nommer le type de séance et, s'il y a lieu, le lieu (« Midi-doc · Tiroir des Saveurs »). Non cliquable.
+
+### Cards / Containers
+- **Carte de film :** fond blanc, coins de 16px, contour d'un pixel à 10 %, pas d'ombre. L'affiche entière occupe le haut ; dessous, 24px de marge intérieure, puis dans l'ordre : genre et série en rouge programme, titre en Oswald, crédits (réalisateur · année · durée) en encre secondaire, résumé.
+- **Bloc lettre d'info :** noir de salle, coins de 16px, marge intérieure de 32 à 64px selon l'écran, halo dans le coin inférieur droit.
+
+### Inputs / Fields
+- **Champ e-mail (sur sombre) :** fond blanc à 5 %, contour d'un pixel blanc à 15 %, coins de 8px, texte blanc à 18px, libellé visible au-dessus.
+- **Focus :** contour de 2px en bleu ciel.
+- **Boutons radio :** cercle au contour blanc à 20 %, rempli en bleu de contrôle avec un point noir de salle quand il est coché.
+
+### Navigation
+- **En-tête :** collant, noir de salle, logo bleu à gauche, trois liens à droite en Inter 500 clair, bleu clair au survol.
+- **Infobulles :** au survol ou au focus d'un lien, une bulle blanche (coins de 12px, ombre d'infobulle) décrit la destination en une phrase.
+- **Mobile (sous 1024px) :** un bouton à trois traits ouvre un panneau `<details>` pleine largeur ; chaque lien y est suivi de sa description.
+- **Lien d'évitement :** « Aller à la programmation », visible au focus clavier.
+
+### Grille de la semaine (composant signature)
+- **Structure :** un vrai `<table>` avec `<caption>`, les films en `<th scope="col">`, les jours en `<th scope="row">`.
+- **Tête de colonne :** l'affiche miniature, puis le titre du film en bandeau rouge programme à texte blanc.
+- **Corps :** un jour par ligne, séparé par un filet ; une colonne sur deux teintée en rouge de colonne ; horaire centré en encre de titre ; le type de séance écrit en dessous en rouge de libellé. Une case vide reste vide.
+- **Colonne des jours :** nom du jour en encre de titre, date en encre secondaire, collée à gauche pendant le défilement horizontal.
+- **Version mobile :** une liste ordonnée par jour ; pour chaque séance, l'horaire en Oswald rouge, le titre du film, puis la pastille de type de séance.
+- **Note de bas de grille :** rappelle le lieu par défaut (« Sauf mention contraire, les séances ont lieu au CinéXtra »).
+
+### Bande de pellicule
+- **Structure :** cadre noir de cadre aux coins de 16px, une rangée de perforations en haut et en bas, quatre photos du lieu entre les deux.
+- **Légende :** un libellé blanc en bas de chaque photo, sur un dégradé noir de salle.
+- **Usage :** une seule fois, dans la bannière.
+
+## Do's and Don'ts
 
 ### Do:
-- **Do** ancrer la palette sur le bleu du logo Cinémarche et tenir les quatre rôles nommés : bleu de salle (identité), rouge (exception datée), ocre (jeune public), neutres (lecture).
-- **Do** écrire la grille hebdomadaire en HTML sémantique, jamais en image : « En html, pas en image (accessibilité) » est une contrainte du brief, pas une préférence.
-- **Do** tenir un contraste ≥ 7:1 sur le texte courant et ≥ 4.5:1 partout ailleurs, y compris les libellés secondaires, les placeholders et les mentions du pied de page.
-- **Do** doubler chaque code couleur d'un libellé écrit : le type de séance se lit, il ne se devine pas à la teinte.
-- **Do** utiliser `font-variant-numeric: tabular-nums` sur tous les horaires et tarifs.
-- **Do** garder le corps de texte à 18px minimum et vérifier la page à 200 % de zoom avant de la considérer terminée.
-- **Do** montrer les vraies photos du lieu (`data/images/` : la salle, le public, la devanture du CineXtra, l'atelier CinéAnimés) et les vraies affiches des films.
-- **Do** traiter les crédits comme de l'information : titre, réalisateur, année, durée.
-- **Do** fournir une alternative `prefers-reduced-motion` pour chaque transition, sans exception.
-- **Do** rendre le focus clavier franc et visible sur tous les éléments interactifs, avec des cibles tactiles ≥ 48px.
+- **Do** garder la grille de la semaine en `<table>` sémantique avec sa version liste sous 768px. Jamais une image.
+- **Do** réserver le noir de salle à l'en-tête, à la bannière et à la lettre d'info, et mettre toute l'information sur blanc.
+- **Do** utiliser le bleu pour l'ambiance et les actions, le rouge pour la programmation.
+- **Do** tenir le texte courant à 18px et à 7:1 de contraste au moins ; vérifier chaque nouvelle paire de couleurs par le calcul.
+- **Do** écrire le type de séance et le lieu en toutes lettres, en plus de la couleur.
+- **Do** montrer les vraies photos du lieu et les affiches entières, dans leur format d'origine.
+- **Do** donner les crédits du film : réalisateur, année, durée.
+- **Do** servir les polices depuis `assets/fonts/`.
+- **Do** garder un focus visible (contour de 2px en bleu ciel) et des cibles tactiles d'au moins 48px.
+- **Do** modifier les tokens dans `src/css/app.css`, puis reconstruire avec `npm run build`.
 
 ### Don't:
-- **Don't** ressembler à un **site institutionnel communal** : pas de colonnes de liens gris, pas de programmation en PDF à télécharger, pas de bandeau administratif.
-- **Don't** ressembler à un **multiplexe commercial** (Kinepolis, UGC) : pas de fond noir, pas de dégradés, pas de gros bouton « RÉSERVER », pas de bandeau promotionnel.
-- **Don't** ressembler à une **plateforme de streaming** : pas de carrousel de vignettes à faire défiler, pas de rangs horizontaux. Une salle programme une sélection courte et datée, pas un catalogue.
-- **Don't** ressembler à un **template SaaS lisse** : pas de grille de cartes identiques, pas d'icônes pastel dans des carrés arrondis, pas de sur-titre en petites majuscules espacées au-dessus de chaque section, pas d'ombres douces partout.
-- **Don't** utiliser les dégradés fournis dans le brief (`$gradient-top`, `$gradient-radial` et les autres). Aucun dégradé décoratif, et jamais de dégradé sur du texte (`background-clip: text` est interdit).
-- **Don't** poser un fond crème, sable, beige ou « papier ». Ni un fond bleu ciel pâle sous du texte gris.
-- **Don't** choisir une typographie par réflexe : Inter, DM Sans, Plus Jakarta Sans, Instrument Sans, IBM Plex Sans, Space Grotesk, Outfit, Playfair Display, Fraunces, Cormorant sont écartées d'office. La famille se choisit dans un vrai catalogue, avec les critères ci-dessus.
-- **Don't** utiliser de bordure latérale colorée de plus de 1px (`border-left` accent) sur une carte, une alerte ou un élément de liste.
-- **Don't** dépasser 16px de rayon sur une carte, une section ou un champ.
-- **Don't** poser d'illustration SVG « dessinée à la main », de trame de papier simulée, de rayures en `repeating-linear-gradient`. S'il n'y a pas d'image réelle disponible, il n'y a pas d'image.
-- **Don't** imbriquer une carte dans une carte.
-- **Don't** écrire de tiret cadratin dans les textes de l'interface, ni de superlatif promotionnel (« une expérience cinématographique unique », « incontournable »).
-- **Don't** faire porter une information par la couleur seule, ni masquer du contenu derrière une animation de dévoilement déclenchée au défilement.
+- **Don't** poser de texte blanc sur le bleu Cinémarche (#2596be) : il faut le bleu de bouton ou plus foncé.
+- **Don't** utiliser un gris plus clair que l'encre secondaire pour du texte sur fond clair.
+- **Don't** descendre sous 16px, ni mettre une phrase à lire sous 18px.
+- **Don't** charger une police, un script ou une feuille de style depuis un CDN tiers.
+- **Don't** étendre le fond sombre à la grille, aux cartes de film ou au pied de page.
+- **Don't** ajouter d'ombre aux cartes ou aux boutons, ni de rayon au-delà de 16px.
+- **Don't** ajouter de dégradé décoratif, de dégradé sur du texte ou un second halo dans une même zone.
+- **Don't** mettre de sur-titre en petites capitales espacées.
+- **Don't** remplacer la grille par un carrousel, ni les cartes « Prochainement » par un rang à faire défiler.
+- **Don't** écrire « RÉSERVER » en gros, ni de superlatif promotionnel.
+- **Don't** recadrer une affiche en carré ou la remplacer par un aplat de couleur.
