@@ -194,7 +194,7 @@ L'échelle de Tailwind est **relevée d'un cran** dans `@theme` : `text-sm` vaut
 
 Une colonne centrée de 1280px au plus (80rem), avec une gouttière de 16px en mobile, 24px à partir de 640px et 32px à partir de 1024px. Les sections sont séparées par 64px de marge verticale en mobile et 96px au-delà, et par un filet fin quand deux sections claires se suivent.
 
-Ordre de la page d'accueil : en-tête collant, phrase d'introduction, grille de la semaine, bannière avec la bande de pellicule, « Nos rendez-vous », lettre d'info, pied de page. La grille suit immédiatement l'introduction : le titre de la semaine et les premières séances restent dans le premier écran. Pour cela, l'introduction n'a que 40px de marge verticale en mobile et 56px au-delà, et la section de la grille commence à 48px puis 64px au lieu de 64px puis 96px.
+Ordre de la page d'accueil : en-tête collant, phrase d'introduction, grille de la semaine, bannière avec la bande de pellicule (« Nos rendez-vous »), « Nos Xtras », lettre d'info, pied de page. La grille suit immédiatement l'introduction : le titre de la semaine et les premières séances restent dans le premier écran. Pour cela, l'introduction n'a que 40px de marge verticale en mobile et 56px au-delà, et la section de la grille commence à 48px puis 64px au lieu de 64px puis 96px.
 
 Points de rupture observés :
 - **640px** : la pellicule passe d'une case par ligne à deux ; les cartes de film passent à 2 colonnes ; le pied de page à 2 colonnes.
@@ -233,7 +233,7 @@ Les affiches gardent leur format d'origine (rapport 31:42) et ne sont jamais rec
 - **Primary :** bleu de bouton, texte blanc en Inter 500 à 18px, contour d'un pixel de la même couleur. Un seul par zone. La page d'accueil n'en affiche plus depuis que la grille est en tête ; le style sert au lien d'évitement et aux pages à venir.
 - **Hover / Focus :** fonce en bleu de survol ; focus par un contour de 2px en bleu ciel, décalé de 2px.
 - **Sur fond sombre (formulaire) :** bouton blanc à texte noir de salle (« Valider »), survol en bleu très pâle.
-- **Lien secondaire :** texte seul en bleu clair suivi d'une flèche, blanc au survol. C'est la seule action de la bannière (« Nos rendez-vous → »).
+- **Lien secondaire :** texte seul en bleu clair suivi d'une flèche, blanc au survol. C'est la seule action de la bannière (« Nos rendez-vous → », qui mène à la pellicule).
 
 ### Chips
 - **Style :** pastille complète, fond rouge de pastille, texte rouge de libellé en Inter 500 à 16px.
@@ -301,6 +301,6 @@ Les affiches gardent leur format d'origine (rapport 31:42) et ne sont jamais rec
 - **Don't** ajouter d'ombre aux cartes ou aux boutons, ni de rayon au-delà de 16px.
 - **Don't** ajouter de dégradé décoratif, de dégradé sur du texte ou un second halo dans une même zone.
 - **Don't** mettre de sur-titre en petites capitales espacées.
-- **Don't** remplacer la grille par un carrousel, ni les cartes « Nos rendez-vous » par un rang à faire défiler.
+- **Don't** remplacer la grille par un carrousel, ni les cartes « Nos Xtras » par un rang à faire défiler.
 - **Don't** écrire « RÉSERVER » en gros, ni de superlatif promotionnel.
 - **Don't** recadrer une affiche en carré ou la remplacer par un aplat de couleur.

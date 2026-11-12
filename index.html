@@ -61,11 +61,25 @@
               role="tooltip"
               class="invisible absolute top-full left-1/2 z-50 mt-3 w-72 -translate-x-1/2 rounded-xl bg-white p-3 text-base/7 text-zinc-700 opacity-0 shadow-lg ring-1 ring-black/10 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"
             >
-              Détails pour tous les films programmés par l'asbl Cinémarche à venir.
+              Nos six ciné-clubs : CinéAnimés, CinéSéniors, Midis-docus, Ciné-débats, CinéScolaires et CinéXtra.
             </div>
           </div>
 
-          <a href="#" class="text-base font-medium text-zinc-100 hover:text-brand-200">Nos Xtras</a>
+          <div class="group relative">
+            <a
+              href="#xtras"
+              aria-describedby="tip-xtras"
+              class="text-base font-medium text-zinc-100 hover:text-brand-200"
+              >Nos Xtras</a
+            >
+            <div
+              id="tip-xtras"
+              role="tooltip"
+              class="invisible absolute top-full left-1/2 z-50 mt-3 w-72 -translate-x-1/2 rounded-xl bg-white p-3 text-base/7 text-zinc-700 opacity-0 shadow-lg ring-1 ring-black/10 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"
+            >
+              Détails pour tous les films programmés par l'asbl Cinémarche à venir.
+            </div>
+          </div>
 
           <a href="#" class="text-base font-medium text-zinc-100 hover:text-brand-200">Archive</a>
 
@@ -112,10 +126,11 @@
               </li>
               <li>
                 <a href="#rendez-vous" class="block rounded-lg px-3 py-3 text-base font-medium text-zinc-100 hover:bg-white/10">Nos rendez-vous</a>
-                <p class="px-3 text-base text-zinc-300">Tous les films programmés par Cinémarche à venir.</p>
+                <p class="px-3 text-base text-zinc-300">Nos six ciné-clubs, des CinéAnimés au CinéXtra.</p>
               </li>
               <li>
-                <a href="#" class="block rounded-lg px-3 py-3 text-base font-medium text-zinc-100 hover:bg-white/10">Nos Xtras</a>
+                <a href="#xtras" class="block rounded-lg px-3 py-3 text-base font-medium text-zinc-100 hover:bg-white/10">Nos Xtras</a>
+                <p class="px-3 text-base text-zinc-300">Tous les films programmés par Cinémarche à venir.</p>
               </li>
               <li>
                 <a href="#" class="block rounded-lg px-3 py-3 text-base font-medium text-zinc-100 hover:bg-white/10">Archive</a>
@@ -509,8 +524,8 @@
               </div>
             </div>
 
-            <!-- Montage « pellicule » : nos ciné-clubs -->
-            <div class="relative mt-12 sm:mt-16">
+            <!-- Montage « pellicule » : nos rendez-vous (les ciné-clubs) -->
+            <div id="rendez-vous" class="relative mt-12 scroll-mt-24 sm:mt-16">
               <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="grid gap-y-2 rounded-2xl bg-nuit-800 p-2 ring-1 ring-white/10 sm:gap-y-3 sm:p-3">
                   <div class="film-perfs h-2.5 [--perf-color:var(--color-zinc-300)] sm:h-3"></div>
@@ -624,10 +639,10 @@
             </div>
           </section>
 
-      <!-- ═══════════════════ Nos rendez-vous ═══════════════════ -->
-      <section id="rendez-vous" class="scroll-mt-20 border-t border-zinc-950/10 py-16 sm:py-24">
+      <!-- ═══════════════════ Nos Xtras ═══════════════════ -->
+      <section id="xtras" class="scroll-mt-20 border-t border-zinc-950/10 py-16 sm:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p class="font-display text-lg font-medium text-rouge-600 sm:text-base">Nos rendez-vous</p>
+          <p class="font-display text-lg font-medium text-rouge-600 sm:text-base">Nos Xtras</p>
           <h2 class="mt-2 max-w-[35ch] font-display text-3xl font-semibold text-zinc-900 text-balance sm:text-4xl">
             Les films programmés par Cinémarche
           </h2>
@@ -805,7 +820,7 @@
       <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div class="grid gap-x-8 gap-y-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
           <div>
-            <a href="/" aria-label="Accueil Cinémarche">
+            <a href="/nouveau/v3/" aria-label="Accueil Cinémarche">
               <img src="assets/img/logo-cinemarche.png" alt="Cinémarche asbl" class="h-7 w-auto" />
             </a>
             <p class="mt-6 max-w-[48ch] text-base text-pretty text-zinc-600">
