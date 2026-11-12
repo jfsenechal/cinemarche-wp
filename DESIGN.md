@@ -160,7 +160,7 @@ Un bleu nuit profond, le bleu et le rouge du logo, et des gris neutres légèrem
 
 **La règle du gris plancher.** Sur fond clair, aucun texte n'est plus clair que l'encre secondaire. Sur fond sombre, aucun texte n'est plus foncé que le clair sur sombre, sauf le texte d'exemple d'un champ.
 
-**La règle du libellé.** La couleur n'est jamais le seul canal : le type de séance (Rencontre, CinéAnimés, CinéSenior, Midi-doc) et le lieu quand ce n'est pas le CinéXtra sont toujours écrits.
+**La règle du libellé.** La couleur n'est jamais le seul canal : le type de séance (Rencontre, CinéAnimés, CinéSéniors, Midi-doc) et le lieu quand ce n'est pas le CinéXtra sont toujours écrits.
 
 ## Typography
 
