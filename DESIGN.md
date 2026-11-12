@@ -106,7 +106,7 @@ Ce document décrit le design **retenu par le porteur du projet : la version 2**
 
 **Creative North Star: "Le programme, puis la salle"**
 
-La page s'ouvre comme le programme qu'on garde dans la poche : sous un en-tête bleu nuit très mince, la grille de la semaine arrive tout de suite, sur fond blanc, encre foncée. Quoi, quand, où : l'horaire se trouve sans faire défiler. Le rouge du logo porte tout ce qui touche à la programmation, des titres de film en tête de colonne aux horaires et aux types de séance.
+La page s'ouvre comme le programme qu'on garde dans la poche : sous un en-tête bleu nuit très mince, une phrase dit d'abord qui programme (« Depuis plus de 25 ans, … mais pas uniquement… ! »), puis la grille de la semaine arrive tout de suite, sur fond blanc, encre foncée. Quoi, quand, où : l'horaire se trouve sans faire défiler. Le rouge du logo porte tout ce qui touche à la programmation, des titres de film en tête de colonne aux horaires et aux types de séance.
 
 Ensuite seulement, la lumière baisse. La bannière plonge dans le noir de salle, un bleu nuit presque noir avec un halo comme la lumière du projecteur : le logo bleu, un titre en capitales étroites, puis une bande de pellicule 35 mm perforée qui montre quatre vraies photos du lieu, la présentation en salle, le public de CinéSenior, l'accueil du CinéXtra, un atelier CinéAnimés. C'est le moment où l'on dit qui programme, et où l'on donne envie de venir.
 
@@ -115,7 +115,7 @@ Puis le clair revient pour les films à venir et le pied de page, et le noir de 
 Le partage est donc simple : **le clair renseigne d'abord, le sombre donne envie ensuite**. Le bleu donne l'ambiance et porte les actions, le rouge porte le programme. La densité est celle d'un programme qu'on lit d'un coup d'œil, avec de grandes respirations entre les sections.
 
 **Key Characteristics:**
-- La grille de la semaine est le premier écran ; la bannière vient après.
+- Une phrase d'introduction, puis la grille de la semaine dans le premier écran ; la bannière vient après.
 - Trois zones sombres seulement (en-tête, bannière, lettre d'info) ; toute l'information se lit sur blanc.
 - Deux couleurs de marque au rôle distinct : bleu pour l'ambiance et l'action, rouge pour la programmation.
 - Deux familles : Oswald, étroite et affirmée, pour les titres et les horaires ; Inter pour la lecture.
@@ -176,6 +176,7 @@ L'échelle de Tailwind est **relevée d'un cran** dans `@theme` : `text-sm` vaut
 
 ### Hierarchy
 - **Display** (Oswald 600, 36px en mobile, 48px puis 60px en grand écran, interligne serré) : le titre de la bannière. Un seul par page, 24 caractères par ligne au plus. C'est un titre de niveau 2 : le titre de niveau 1 de la page d'accueil est invisible à l'écran et placé en tête du contenu, pour que l'ordre des titres reste juste alors que la grille passe en premier.
+- **Ouverture de l'introduction** (Oswald 600, 36px en mobile, 48px puis 60px en grand écran, interligne 1, bleu de lien) : les premiers mots de la phrase d'introduction, « Depuis plus de 25 ans, ». Ce n'est pas un titre : c'est le début d'un paragraphe.
 - **Headline** (Oswald 600, 30px puis 36px) : titres de section.
 - **Title** (Oswald 500, 24px pour un titre de film dans une carte, 22px pour un jour dans la liste mobile).
 - **Body** (Inter 400, 18px, interligne 28px ; chapô à 20px en mobile) : résumés, chapôs, notes, coordonnées. Longueur de ligne plafonnée à 56 caractères.
@@ -193,12 +194,12 @@ L'échelle de Tailwind est **relevée d'un cran** dans `@theme` : `text-sm` vaut
 
 Une colonne centrée de 1280px au plus (80rem), avec une gouttière de 16px en mobile, 24px à partir de 640px et 32px à partir de 1024px. Les sections sont séparées par 64px de marge verticale en mobile et 96px au-delà, et par un filet fin quand deux sections claires se suivent.
 
-Ordre de la page d'accueil : en-tête collant, grille de la semaine, bannière avec la bande de pellicule, « Nos rendez-vous », lettre d'info, pied de page. La grille passe en premier : l'horaire se trouve sans faire défiler.
+Ordre de la page d'accueil : en-tête collant, phrase d'introduction, grille de la semaine, bannière avec la bande de pellicule, « Nos rendez-vous », lettre d'info, pied de page. La grille suit immédiatement l'introduction : le titre de la semaine et les premières séances restent dans le premier écran. Pour cela, l'introduction n'a que 40px de marge verticale en mobile et 56px au-delà, et la section de la grille commence à 48px puis 64px au lieu de 64px puis 96px.
 
 Points de rupture observés :
 - **640px** : la pellicule passe de 2 × 2 photos carrées à 4 photos en 4:3 sur une ligne ; les cartes de film passent à 2 colonnes ; le pied de page à 2 colonnes.
 - **768px** : la grille de la semaine passe de la liste par jour au tableau.
-- **1024px** : le menu déroulant devient une barre de liens ; les cartes de film passent à 3 colonnes ; la lettre d'info met le texte et le formulaire côte à côte.
+- **1024px** : le menu déroulant devient une barre de liens ; la phrase d'introduction passe sur deux colonnes ; les cartes de film passent à 3 colonnes ; la lettre d'info met le texte et le formulaire côte à côte.
 
 Le tableau garde une largeur minimale de 768px et défile horizontalement dans son conteneur si l'écran est plus étroit ; la colonne des jours reste collée à gauche.
 
@@ -253,6 +254,14 @@ Les affiches gardent leur format d'origine (rapport 31:42) et ne sont jamais rec
 - **Mobile (sous 1024px) :** un bouton à trois traits ouvre un panneau `<details>` pleine largeur ; chaque lien y est suivi de sa description.
 - **Lien d'évitement :** « Aller à la programmation », visible au focus clavier.
 
+### Phrase d'introduction
+- **Structure :** un seul paragraphe en trois temps, sur blanc, fermé en bas par un filet fin. Ni sur-titre, ni fond coloré, ni image.
+- **Ouverture :** « Depuis plus de 25 ans, » en Oswald 600, bleu de lien (8.17:1 sur blanc).
+- **Corps :** Inter 400, 20px en mobile et 22px au-delà, encre, 60 caractères par ligne au plus.
+- **Chute :** « mais pas uniquement… ! » sur sa propre ligne, en Oswald 500, 30px puis 36px, rouge programme (6.22:1 sur blanc, grand texte).
+- **Grand écran (à partir de 1024px) :** l'ouverture à gauche sur trois lignes, le corps et la chute à droite, séparés par un filet vertical d'un pixel.
+- **Usage :** une seule fois, en tête de la page d'accueil. Le texte est fourni par le porteur du projet ; il reste court pour ne pas repousser la grille hors du premier écran.
+
 ### Grille de la semaine (composant signature)
 - **Structure :** un vrai `<table>` avec `<caption>`, les films en `<th scope="col">`, les jours en `<th scope="row">`.
 - **Tête de colonne :** l'affiche miniature, puis le titre du film en bandeau rouge programme à texte blanc.
@@ -270,7 +279,7 @@ Les affiches gardent leur format d'origine (rapport 31:42) et ne sont jamais rec
 
 ### Do:
 - **Do** garder la grille de la semaine en `<table>` sémantique avec sa version liste sous 768px. Jamais une image.
-- **Do** garder la grille de la semaine en tête de la page d'accueil, avant la bannière.
+- **Do** garder la grille de la semaine en tête de la page d'accueil, juste après la phrase d'introduction et avant la bannière ; elle doit rester visible dans le premier écran.
 - **Do** réserver le noir de salle à l'en-tête, à la bannière et à la lettre d'info, et mettre toute l'information sur blanc.
 - **Do** utiliser le bleu pour l'ambiance et les actions, le rouge pour la programmation.
 - **Do** tenir le texte courant à 18px et à 7:1 de contraste au moins ; vérifier chaque nouvelle paire de couleurs par le calcul.
