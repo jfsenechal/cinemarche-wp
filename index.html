@@ -509,51 +509,113 @@
               </div>
             </div>
 
-            <!-- Montage « pellicule » -->
+            <!-- Montage « pellicule » : nos ciné-clubs -->
             <div class="relative mt-12 sm:mt-16">
               <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="grid gap-y-2 rounded-2xl bg-nuit-800 p-2 ring-1 ring-white/10 sm:gap-y-3 sm:p-3">
                   <div class="film-perfs h-2.5 [--perf-color:var(--color-zinc-300)] sm:h-3"></div>
-                  <ul role="list" class="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
-                    <li class="relative">
-                      <img
-                        src="assets/img/salle-presentation.jpg"
-                        alt="Présentation d'un film sur la scène de la salle du CinéXtra."
-                        class="aspect-square w-full rounded-[min(1vw,10px)] object-cover outline-1 -outline-offset-1 outline-white/10 sm:aspect-4/3"
-                      />
-                      <p class="absolute inset-x-0 bottom-0 rounded-b-[min(1vw,10px)] bg-linear-to-t from-nuit-950/90 to-transparent px-3 pt-8 pb-2.5 text-base/6 font-medium text-white sm:text-sm/5">
-                        Présentation en salle
-                      </p>
+                  <ul role="list" aria-label="Nos ciné-clubs" class="grid gap-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3">
+                    <li>
+                      <a href="#" class="group flex h-full flex-col overflow-hidden rounded-[min(1vw,10px)] bg-nuit-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-300">
+                        <span class="block overflow-hidden">
+                          <img
+                            src="assets/img/cineanimes.jpg"
+                            alt="Des enfants animent un décor en papier découpé sous une lampe, pendant un atelier CinéAnimés."
+                            class="aspect-3/2 w-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105"
+                          />
+                        </span>
+                        <span class="block px-4 pt-4 pb-5 sm:px-5">
+                          <span class="block font-display text-2xl font-medium text-white group-hover:underline group-hover:underline-offset-4">CinéAnimés</span>
+                          <span class="mt-2 block text-base text-pretty text-zinc-300">
+                            Le ciné-club des enfants&nbsp;: tous les mois, de septembre à juin, une séance avec animation en salle et activité pratique post-projection.
+                          </span>
+                        </span>
+                      </a>
                     </li>
-                    <li class="relative">
-                      <img
-                        src="assets/img/cineseniors.jpg"
-                        alt="Le public d'une séance CinéSenior installé dans les fauteuils de la salle."
-                        class="aspect-square w-full rounded-[min(1vw,10px)] object-cover outline-1 -outline-offset-1 outline-white/10 sm:aspect-4/3"
-                      />
-                      <p class="absolute inset-x-0 bottom-0 rounded-b-[min(1vw,10px)] bg-linear-to-t from-nuit-950/90 to-transparent px-3 pt-8 pb-2.5 text-base/6 font-medium text-white sm:text-sm/5">
-                        CinéSenior
-                      </p>
+                    <li>
+                      <a href="#" class="group flex h-full flex-col overflow-hidden rounded-[min(1vw,10px)] bg-nuit-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-300">
+                        <span class="block overflow-hidden">
+                          <img
+                            src="assets/img/cineseniors.jpg"
+                            alt="Le public d'une séance CinéSéniors installé dans les fauteuils rouges, face à l'écran."
+                            class="aspect-3/2 w-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105"
+                          />
+                        </span>
+                        <span class="block px-4 pt-4 pb-5 sm:px-5">
+                          <span class="block font-display text-2xl font-medium text-white group-hover:underline group-hover:underline-offset-4">CinéSéniors</span>
+                          <span class="mt-2 block text-base text-pretty text-zinc-300">
+                            Le ciné-club des aînés&nbsp;: chaque mois, toute l'année, une séance avec vote du public pour le choix du film, en collaboration avec la Maison des Aînés.
+                          </span>
+                        </span>
+                      </a>
                     </li>
-                    <li class="relative">
-                      <img
-                        src="assets/img/accueil-cinextra.jpg"
-                        alt="L'accueil vitré du complexe CinéXtra un jour de séance."
-                        class="aspect-square w-full rounded-[min(1vw,10px)] object-cover outline-1 -outline-offset-1 outline-white/10 sm:aspect-4/3"
-                      />
-                      <p class="absolute inset-x-0 bottom-0 rounded-b-[min(1vw,10px)] bg-linear-to-t from-nuit-950/90 to-transparent px-3 pt-8 pb-2.5 text-base/6 font-medium text-white sm:text-sm/5">
-                        Le CinéXtra
-                      </p>
+                    <li>
+                      <a href="#" class="group flex h-full flex-col overflow-hidden rounded-[min(1vw,10px)] bg-nuit-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-300">
+                        <span class="block overflow-hidden">
+                          <img
+                            src="assets/img/midi-documentaire.jpg"
+                            alt="Le public d'un Midi-docu attablé au Tiroir des Saveurs, sous une guirlande de fanions."
+                            class="aspect-3/2 w-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105"
+                          />
+                        </span>
+                        <span class="block px-4 pt-4 pb-5 sm:px-5">
+                          <span class="block font-display text-2xl font-medium text-white group-hover:underline group-hover:underline-offset-4">Midis-docus</span>
+                          <span class="mt-2 block text-base text-pretty text-zinc-300">
+                            Le ciné-club de documentaires&nbsp;: chaque mois, de septembre à juin, au Tiroir des Saveurs, des films documentaires accompagnés d'une rencontre avec les réalisatrices et réalisateurs.
+                          </span>
+                        </span>
+                      </a>
                     </li>
-                    <li class="relative">
-                      <img
-                        src="assets/img/cineanimes.jpg"
-                        alt="Des enfants animent une image en volume pendant un atelier CinéAnimés."
-                        class="aspect-square w-full rounded-[min(1vw,10px)] object-cover outline-1 -outline-offset-1 outline-white/10 sm:aspect-4/3"
-                      />
-                      <p class="absolute inset-x-0 bottom-0 rounded-b-[min(1vw,10px)] bg-linear-to-t from-nuit-950/90 to-transparent px-3 pt-8 pb-2.5 text-base/6 font-medium text-white sm:text-sm/5">
-                        Atelier CinéAnimés
-                      </p>
+                    <li>
+                      <a href="#" class="group flex h-full flex-col overflow-hidden rounded-[min(1vw,10px)] bg-nuit-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-300">
+                        <span class="block overflow-hidden">
+                          <img
+                            src="assets/img/salle-presentation.jpg"
+                            alt="Deux intervenants présentent la séance devant l'écran, face à une salle bien remplie."
+                            class="aspect-3/2 w-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105"
+                          />
+                        </span>
+                        <span class="block px-4 pt-4 pb-5 sm:px-5">
+                          <span class="block font-display text-2xl font-medium text-white group-hover:underline group-hover:underline-offset-4">Ciné-débats</span>
+                          <span class="mt-2 block text-base text-pretty text-zinc-300">
+                            Le ciné-club des partenariats&nbsp;: des séances rencontres, en moyenne une fois par mois, autour de différentes thématiques, en collaboration avec des associations multiples et variées&#8239;!
+                          </span>
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="group flex h-full flex-col overflow-hidden rounded-[min(1vw,10px)] bg-nuit-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-300">
+                        <span class="block overflow-hidden">
+                          <img
+                            src="assets/img/salle-jeune-public.jpg"
+                            alt="Des enfants et leurs accompagnants prennent place dans la salle avant une projection."
+                            class="aspect-3/2 w-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105"
+                          />
+                        </span>
+                        <span class="block px-4 pt-4 pb-5 sm:px-5">
+                          <span class="block font-display text-2xl font-medium text-white group-hover:underline group-hover:underline-offset-4">CinéScolaires</span>
+                          <span class="mt-2 block text-base text-pretty text-zinc-300">
+                            Les séances scolaires&nbsp;: des films de choix pour toutes les écoles de la région, toute l'année scolaire, avec dossier pédagogique et horaires adaptés, en collaboration avec Les Grignoux.
+                          </span>
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="group flex h-full flex-col overflow-hidden rounded-[min(1vw,10px)] bg-nuit-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-300">
+                        <span class="block overflow-hidden">
+                          <img
+                            src="assets/img/cine-club.jpg"
+                            alt="La salle pendant une soirée ciné-club, le titre du film projeté à l'écran."
+                            class="aspect-3/2 w-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105"
+                          />
+                        </span>
+                        <span class="block px-4 pt-4 pb-5 sm:px-5">
+                          <span class="block font-display text-2xl font-medium text-white group-hover:underline group-hover:underline-offset-4">CinéXtra</span>
+                          <span class="mt-2 block text-base text-pretty text-zinc-300">
+                            Le ciné-club en soirée&nbsp;: tous les mois, un choix de trois films art et essai, un vote du public pour décider lequel sera projeté, et une rencontre conviviale à l'issue de la séance.
+                          </span>
+                        </span>
+                      </a>
                     </li>
                   </ul>
                   <div class="film-perfs h-2.5 [--perf-color:var(--color-zinc-300)] sm:h-3"></div>

@@ -108,7 +108,7 @@ Ce document décrit le design **retenu par le porteur du projet : la version 2**
 
 La page s'ouvre comme le programme qu'on garde dans la poche : sous un en-tête bleu nuit très mince, une phrase dit d'abord qui programme (« Depuis plus de 25 ans, … mais pas uniquement… ! »), puis la grille de la semaine arrive tout de suite, sur fond blanc, encre foncée. Quoi, quand, où : l'horaire se trouve sans faire défiler. Le rouge du logo porte tout ce qui touche à la programmation, des titres de film en tête de colonne aux horaires et aux types de séance.
 
-Ensuite seulement, la lumière baisse. La bannière plonge dans le noir de salle, un bleu nuit presque noir avec un halo comme la lumière du projecteur : le logo bleu, un titre en capitales étroites, puis une bande de pellicule 35 mm perforée qui montre quatre vraies photos du lieu, la présentation en salle, le public de CinéSenior, l'accueil du CinéXtra, un atelier CinéAnimés. C'est le moment où l'on dit qui programme, et où l'on donne envie de venir.
+Ensuite seulement, la lumière baisse. La bannière plonge dans le noir de salle, un bleu nuit presque noir avec un halo comme la lumière du projecteur : le logo bleu, un titre en capitales étroites, puis une bande de pellicule 35 mm perforée qui présente les six ciné-clubs, chacun avec une vraie photo du lieu, son nom et une phrase : CinéAnimés, CinéSéniors, Midis-docus, Ciné-débats, CinéScolaires, CinéXtra. C'est le moment où l'on dit qui programme, et où l'on donne envie de venir.
 
 Puis le clair revient pour les films à venir et le pied de page, et le noir de salle une dernière fois pour la lettre d'info.
 
@@ -178,7 +178,7 @@ L'échelle de Tailwind est **relevée d'un cran** dans `@theme` : `text-sm` vaut
 - **Display** (Oswald 600, 36px en mobile, 48px puis 60px en grand écran, interligne serré) : le titre de la bannière. Un seul par page, 24 caractères par ligne au plus. C'est un titre de niveau 2 : le titre de niveau 1 de la page d'accueil est invisible à l'écran et placé en tête du contenu, pour que l'ordre des titres reste juste alors que la grille passe en premier.
 - **Ouverture de l'introduction** (Oswald 600, 36px en mobile, 48px puis 60px en grand écran, interligne 1, bleu de lien) : les premiers mots de la phrase d'introduction, « Depuis plus de 25 ans, ». Ce n'est pas un titre : c'est le début d'un paragraphe.
 - **Headline** (Oswald 600, 30px puis 36px) : titres de section.
-- **Title** (Oswald 500, 24px pour un titre de film dans une carte, 22px pour un jour dans la liste mobile).
+- **Title** (Oswald 500, 24px pour un titre de film dans une carte ou un nom de ciné-club dans la pellicule, 22px pour un jour dans la liste mobile).
 - **Body** (Inter 400, 18px, interligne 28px ; chapô à 20px en mobile) : résumés, chapôs, notes, coordonnées. Longueur de ligne plafonnée à 56 caractères.
 - **Label** (Inter 500, 16px, casse normale) : types de séance, genre, libellés de formulaire, légendes des photos. En Oswald 500 : le sur-titre de section, les horaires de la liste mobile (20px) et le titre de film en tête de colonne (16px).
 
@@ -197,9 +197,9 @@ Une colonne centrée de 1280px au plus (80rem), avec une gouttière de 16px en m
 Ordre de la page d'accueil : en-tête collant, phrase d'introduction, grille de la semaine, bannière avec la bande de pellicule, « Nos rendez-vous », lettre d'info, pied de page. La grille suit immédiatement l'introduction : le titre de la semaine et les premières séances restent dans le premier écran. Pour cela, l'introduction n'a que 40px de marge verticale en mobile et 56px au-delà, et la section de la grille commence à 48px puis 64px au lieu de 64px puis 96px.
 
 Points de rupture observés :
-- **640px** : la pellicule passe de 2 × 2 photos carrées à 4 photos en 4:3 sur une ligne ; les cartes de film passent à 2 colonnes ; le pied de page à 2 colonnes.
+- **640px** : la pellicule passe d'une case par ligne à deux ; les cartes de film passent à 2 colonnes ; le pied de page à 2 colonnes.
 - **768px** : la grille de la semaine passe de la liste par jour au tableau.
-- **1024px** : le menu déroulant devient une barre de liens ; la phrase d'introduction passe sur deux colonnes ; les cartes de film passent à 3 colonnes ; la lettre d'info met le texte et le formulaire côte à côte.
+- **1024px** : le menu déroulant devient une barre de liens ; la phrase d'introduction passe sur deux colonnes ; la pellicule passe à trois cases par ligne ; les cartes de film passent à 3 colonnes ; la lettre d'info met le texte et le formulaire côte à côte.
 
 Le tableau garde une largeur minimale de 768px et défile horizontalement dans son conteneur si l'écran est plus étroit ; la colonne des jours reste collée à gauche.
 
@@ -216,7 +216,7 @@ Deux effets seulement dépassent ce plan. Le **halo** : un disque de bleu Ciném
 
 **La règle de l'ombre unique.** Seul ce qui flotte au-dessus de la page porte une ombre. Les cartes, les boutons et les blocs n'en ont pas.
 
-**La règle du halo.** Le halo bleu n'existe que sur le noir de salle, un par zone sombre. Les légendes des photos de la pellicule portent le seul dégradé du site, du noir de salle vers le transparent, pour garder le texte lisible sur l'image.
+**La règle du halo.** Le halo bleu n'existe que sur le noir de salle, un par zone sombre. Le site ne porte plus aucun dégradé d'habillage : dans la pellicule, le texte est sous la photo et non dessus.
 
 ## Shapes
 
@@ -271,8 +271,10 @@ Les affiches gardent leur format d'origine (rapport 31:42) et ne sont jamais rec
 - **Note de bas de grille :** rappelle le lieu par défaut (« Sauf mention contraire, les séances ont lieu au CinéXtra »).
 
 ### Bande de pellicule
-- **Structure :** cadre noir de cadre aux coins de 16px, une rangée de perforations en haut et en bas, quatre photos du lieu entre les deux.
-- **Légende :** un libellé blanc en bas de chaque photo, sur un dégradé noir de salle.
+- **Structure :** cadre noir de cadre aux coins de 16px, une rangée de perforations en haut et en bas, six cases entre les deux, une par ciné-club : une colonne en mobile, deux à partir de 640px, trois à partir de 1024px.
+- **Case :** un lien entier sur fond noir de salle. La photo du lieu en 3:2 en haut ; dessous, le nom du ciné-club en Oswald 500 blanc à 24px, puis un extrait d'une phrase en Inter 18px, clair sur sombre (plus de 12:1).
+- **Survol / Focus :** le nom se souligne et la photo grossit légèrement (uniquement si les animations sont acceptées) ; focus par un contour de 2px en bleu ciel.
+- **Contenu :** une phrase par ciné-club, de longueur comparable, sur le modèle « Le ciné-club des… : fréquence, période, ce qui s'y passe, partenaire ». Ce sont des présentations, pas des horaires : la règle du sombre qui invite est respectée.
 - **Usage :** une seule fois, dans la bannière.
 
 ## Do's and Don'ts
